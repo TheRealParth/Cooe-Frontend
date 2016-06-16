@@ -1,7 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300);
-@import url(https://fonts.googleapis.com/css?family=Comfortaa:400,300,700);
-@import url(https://fonts.googleapis.com/css?family=Asap:400,700,700italic,400italic);
+
 @font-face {
   font-family: 'source_sans_probold';
   src: url("/assets/css/fonts/source-sans/bold/sourcesanspro-bold-webfont.588bce171e5e.eot");
@@ -3235,7 +3233,7 @@ label.error {
 
 /* line 22, ../sass/home.scss */
 html, body {
-  background: white;
+  background-color: #f9f9f9;
   color: #797473;
   font-family: AsapRegular;
 }
@@ -3546,4 +3544,13 @@ p {
 #login-form {
   right: 0;
   width: 200px;
+}
+md-input.login-input {
+  width: 80%;
+}
+button.login-button.md-primary {
+  margin-top: 1.4em;
+}
+form.login-form {
+  text-align: center;
 }

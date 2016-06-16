@@ -1,21 +1,25 @@
 import {Component} from '@angular/core';
 import { RouteConfig, Router} from '@angular/router-deprecated';
-import { NgIf } from '@angular/common';
 import {LoggedInRouterOutlet} from './LoggedInOutlet';
 import {HomeComponent} from './components/home.component';
 import {LoginComponent} from './components/login.component';
 import {ProfileComponent} from './components/profile.component';
+
+import { MD_INPUT_DIRECTIVES, MdInput } from '@angular2-material/input';
+
+import { MdProgressCircle, MdSpinner } from '@angular2-material/progress-circle';
 // import {Signup} from './components/signup.component';
 
 @Component({
   // HTML selector for this component
   selector: 'app',
   template: `
-
+<!--<md-progress-circle mode="indeterminate" color="primary" *ngIf="isLoading"></md-progress-circle>-->
+   
       <router-awesome> 
 </router-awesome>
   `,
-  directives: [LoggedInRouterOutlet]
+  directives: [LoggedInRouterOutlet, MD_INPUT_DIRECTIVES]
 })
 
 @RouteConfig([
@@ -26,7 +30,10 @@ import {ProfileComponent} from './components/profile.component';
   // { path: '/signup', component: Signup, as: 'Signup' }
 ])
 
-export class AppComponent {
+export class AppComponent{
+  ngOnInit() {
+  }
+  constructor() {
 
-  constructor() {}
+  }
 }
