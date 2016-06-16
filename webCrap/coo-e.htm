@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://coo-e.com/login/ -->
+<html class=" js no-touch svg inlinesvg svgclippaths no-ie8compat" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>coo-e</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=380, maximum-scale=1.0">
+
+    <link rel="shortcut icon" href="http://coo-e.com/static/img/favicon.png">
+
+    <link rel="stylesheet" href="./coo-e_files/normalize.15bc3e9ce516.css">
+    <link rel="stylesheet" href="./coo-e_files/home.7b82c3948c9c.css">
+    <script async="" src="./coo-e_files/analytics.js"></script><script src="./coo-e_files/custom.modernizr.692789fedf79.js"></script><style type="text/css"></style>
+
+    
+
+    
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script>window.html5 || document.write('<script src="/static/js/libs/html5.js"><\/script>')</script>
+    <![endif]-->
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42555612-1', 'coo-e.com');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+<!--[if lt IE 8]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<div id="top-row" class="row">
+  <div class="control-bar">
+    <div id="open-close-btn" class="control-btn bats-opened"></div>
+    <div class="control-menu" style="">
+      <a href="http://coo-e.com/" class="control-btn home-btn bats-logo" data-txt="Home"></a>
+      <a href="http://coo-e.com/about/" class="control-btn about-btn bats-tour" data-txt="About"></a>
+      <a href="http://coo-e.com/login/#contact" class="control-btn contact-btn bats-invited" data-txt="Contact"></a>
+      <div class="control-text hide-for-small">Contact</div>
+    </div>
+  </div>
+
+  <div class="signin-bar">
+        <a href="http://coo-e.com/login" class="signin-button">Beta Sign-In</a>
+  </div>
+</div>
+
+<div id="contact-form" class="dropdown-box" style="display: none;">
+  <strong>Let us know what's on your mind:</strong>
+  <input type="text" placeholder="Your name">
+  <input type="text" placeholder="Your email">
+  <textarea placeholder="Your thoughts"></textarea>
+  <input type="submit" class="btn-submit" value="Submit">
+</div>
+
+
+<div id="login-form" class="dropdown-box">
+  <strong>Username:</strong>
+  <input type="text">
+  <strong>Password:</strong>
+  <input type="text">
+  <input type="submit" class="btn-submit" value="Submit">
+</div>
+
+  
+<div class="row">
+  <div class="homepanel small-6 small-centered columns">
+
+    <form class="form-horizontal textarea" method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="eznJsr4Ik90eYqfbdv0w5HnOoNbPJQ4L">
+
+          <h1>Login</h1>
+
+          <div class="control-group ">
+            <label class="control-label" for="inputUsername">Username</label>
+            <div class="controls">
+              <input type="text" class="input-large" id="inputUsername" name="username" value="">
+            </div>
+          </div>
+
+          <div class="control-group ">
+            <label class="control-label" for="inputPass">Password</label>
+            <div class="controls">
+              <input type="password" class="input-large" id="inputPass" name="password">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">
+            <button type="submit" class="btn btn-primary">Login</button>
+            <br><br><br>
+             
+                  <a class="button secondary" rel="nofollow" href="http://coo-e.com/login/twitter/">Twitter</a>
+            
+                  <a class="button secondary" rel="nofollow" href="http://coo-e.com/login/facebook/">Facebook</a>
+            
+                  <a class="button secondary" rel="nofollow" href="http://coo-e.com/login/google-oauth2/">Google-Oauth2</a>
+            
+
+            </div>
+          </div>
+
+        
+
+        
+    </form>
+
+  </div>
+</div>
+
+
+
+
+<script src="./coo-e_files/jquery.js"></script>
+<!-- <script>window.jQuery || document.write('<script src="/media/js/libs/jquery-1.7.2.min.js"><\/script>')</script> -->
+
+<script type="text/javascript">
+  $(function(){
+    $("#open-close-btn").click(function(){
+      $('.control-menu').toggle();
+      $("#contact-form").hide();
+      $(this).toggleClass("bats-closed bats-opened");
+    });
+
+    $(".control-menu .control-btn").mouseover(function(){
+      $(".control-text").text($(this).data("txt"));
+    });
+
+    $(".contact-btn").click(function(){
+      $("#contact-form").toggle();
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+</body></html>

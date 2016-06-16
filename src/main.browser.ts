@@ -2,18 +2,22 @@
  * Providers provided by Angular
  */
 import { bootstrap } from '@angular/platform-browser-dynamic';
+import { provide } from '@angular/core';
 /*
 * Platform and Environment
 * our providers/directives/pipes
 */
 import { DIRECTIVES, PIPES, PROVIDERS } from './platform/browser';
 import { ENV_PROVIDERS } from './platform/environment';
-
+import { FORM_PROVIDERS, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { ROUTER_PROVIDERS } from '@angular/router-deprecated';
+import { Http, HTTP_PROVIDERS } from '@angular/http';
+import { AuthConfig, AuthHttp, AUTH_PROVIDERS } from 'angular2-jwt';
 /*
 * App Component
 * our top level component that holds all of our components
 */
-import { AppComponent } from 'app/app.component.ts';
+import { AppComponent, APP_PROVIDERS } from 'app';
 
 /*
  * Bootstrap our Angular app with a top level component `App` and inject
@@ -22,10 +26,25 @@ import { AppComponent } from 'app/app.component.ts';
 export function main(initialHmrState?: any): Promise<any> {
 
   return bootstrap(AppComponent, [
-    ...PROVIDERS,
-    ...ENV_PROVIDERS,
-    ...DIRECTIVES,
-    ...PIPES,
+    FORM_PROVIDERS,
+    ROUTER_PROVIDERS,
+    {provide: LocationStrategy, useClass: PathLocationStrategy},
+    HTTP_PROVIDERS,
+    PROVIDERS,
+    ENV_PROVIDERS,
+    DIRECTIVES,
+    PIPES,
+    AUTH_PROVIDERS,
+    APP_PROVIDERS,
+    provide(Window, { useValue: window }),
+    provide(AuthHttp, {
+      useFactory: (http) => {
+        return new AuthHttp(new AuthConfig({
+          tokenName: 'jwt'
+        }), http);
+      },
+      deps: [Http]
+    })
   ])
   .catch(err => console.error(err));
 

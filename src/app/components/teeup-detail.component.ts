@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterLink, RouteParams, Router, ROUTER_PROVIDERS, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {Routes, RouteSegment} from '@angular/router';
-import {TeeupService} from '../services/teeup.service';
+import {TeeupService} from '../services/teeup.service.ts';
 import {TeeupDetails} from '../services/teeup-details.ts';
 @Component({
     selector: 'teeups',

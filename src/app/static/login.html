@@ -1,0 +1,82 @@
+
+
+<!--[if lt IE 8]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<div id='top-row' class="row">
+  <div class="control-bar">
+    <div id="open-close-btn" class="control-btn bats-closed"></div>
+    <div class="control-menu" style="display: none;">
+      <a href="/" class="control-btn home-btn bats-logo" data-txt="Home"></a>
+      <a href="/about/" class="control-btn about-btn bats-tour" data-txt="About"></a>
+      <a href="#contact" class="control-btn contact-btn bats-invited" data-txt="Contact" ></a>
+      <div class="control-text hide-for-small">Home</div>
+    </div>
+  </div>
+
+  <div class="signin-bar">
+    <a href="/login" class="signin-button">Beta Sign-In</a>
+  </div>
+</div>
+
+<div id="contact-form" class="dropdown-box">
+  <strong>Let us know what's on your mind:</strong>
+  <input type="text" placeholder="Your name">
+  <input type="text" placeholder="Your email">
+  <textarea placeholder="Your thoughts"></textarea>
+  <input type="submit" class="btn-submit" value="Submit">
+</div>
+
+
+<div id="login-form" class="dropdown-box">
+  <strong>Username:</strong>
+  <input type="text">
+  <strong>Password:</strong>
+  <input type="text">
+  <input type="submit" class="btn-submit" value="Submit">
+</div>
+
+
+<div class="row" >
+  <div class="homepanel small-6 small-centered columns">
+
+    <form class="form-horizontal textarea" method="post">
+      <input type='hidden' name='csrfmiddlewaretoken' value='XlOPjZTtjtQDgDGZHHvZAHfFnvJ2E3Qt' />
+
+      <h1>Login</h1>
+
+      <div class="control-group ">
+        <label class="control-label" for="inputUsername">Username</label>
+        <div class="controls">
+          <input type="text" class="input-large" id="inputUsername" name="username" value="">
+        </div>
+      </div>
+
+      <div class="control-group ">
+        <label class="control-label" for="inputPass">Password</label>
+        <div class="controls">
+          <input type="password" class="input-large" id="inputPass" name="password">
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn btn-primary">Login</button>
+          <br/><br/><br/>
+
+          <a class="button secondary" rel="nofollow" href="/login/twitter/">Twitter</a>
+
+          <a class="button secondary" rel="nofollow" href="/login/facebook/">Facebook</a>
+
+          <a class="button secondary" rel="nofollow" href="/login/google-oauth2/">Google-Oauth2</a>
+
+
+        </div>
+      </div>
+
+
+
+
+    </form>
+
+  </div>
+</div>
+

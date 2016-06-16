@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterLink, Router, ROUTER_PROVIDERS, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
-import {TeeupService} from '../services/teeup.service';
+import {TeeupService} from '../services/teeup.service.ts';
 import { Teeup } from '../services/teeup';
 
 @Component({
@@ -18,7 +18,7 @@ import { Teeup } from '../services/teeup';
 				<i class="fa fa-map"></i>
 			</div>
 			<div class="teeups">
-				<div *ngFor="#teeup of teeups" class="teeup">
+				<div *ngFor="let teeup of teeups" class="teeup">
 					<div class="teeupTop">
 						<span class="avatar"></span>
 						<div class="teeupContent">
@@ -75,11 +75,10 @@ import { Teeup } from '../services/teeup';
 
 })
 
-export class TeeupsComponent implements OnInit {
+export class TeeupsComponent {
 	teeups: Teeup[];
-	constructor(private teeupService: TeeupService){
+	constructor(private teeupService: TeeupService){}
 
-	}
 	getTeeups(){
 		this.teeupService.getTeeups().then(teeups => this.teeups = teeups);
 	}
