@@ -1,0 +1,740 @@
+<nav id="topbar">
+
+  <ul class="left title-area">
+
+    <li class="has-dropdown"><a class="dd-btn"><img src="/assets/img/logo.png"></a>
+      <ul class="dropdown cooelink">
+        <li>
+          <a href="/teeup/">
+            <div class="bats-logo"></div>
+            <span>My TeeUps</span>
+          </a>
+        </li>
+        <li>
+          <a href="/teeup/#create">
+            <div class="bats-add"></div>
+            <span>Create TeeUps</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-user"></div>
+            <span>My Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-contacts"></div>
+            <span>Contacts</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-calendar"></div>
+            <span>Calendar</span>
+          </a>
+        </li>
+        <li>
+          <a href="/settings/">
+            <div class="bats-settings"></div>
+            <span>Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-send-msg"></div>
+            <span>Send Feedback</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-tour"></div>
+            <span>Tour</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+
+
+  <ul class="left">
+
+
+
+
+  </ul>
+
+  <ul class="right">
+    <li class="has-dropdown">
+      <a class="dd-btn">
+        <img class="rounded" src="/assets/img/avatar.png" title="dougzytko@gmail.com" style="width:30px; height: 30px;">
+        <span class="usernametxt"><!--<span id="myjidhere"></span>--> doug</span>
+      </a>
+      <ul class="dropdown">
+        <li><a href="/invite/email/">Invite Friends</a></li>
+        <li><a href="/settings/">Settings</a></li>
+        <li class="dividerx"></li>
+        <li><a href="/logout/">Logout</a></li>
+      </ul>
+    </li>
+  </ul>
+
+</nav>
+<div class="row">
+  <div id="overlayError" class="small-10 columns small-centered alert-box alert" data-alert="" style="display: none;">
+    <div class="textHere"><strong>Error</strong> goes here</div>
+    <!-- <a href="#" class="close">&times;</a> -->
+  </div>
+
+  <div id="loadingScreen" class="small-10 columns small-centered alert-box" style="display: none;">
+    Loading<span class="dot_area">.4</span>
+  </div>
+</div>
+<div class="table_holder">
+  <div class="main_table" style="width: 903.5px;">
+    <div class="main_row">
+
+      <div id="view_fake" class="block_holder" style="width: 521.5px;">
+        <div class="block">
+        </div>
+      </div>
+
+
+      <div id="view_inbox" class="block_holder panel1">
+        <div class="block">
+          <div class="header">
+            <span class="headerTitle">
+                My TeeUps:
+            </span>
+            <a id="create_button" class="header_button right" href="#create" title="Create Teeup"><i class="bats-add"></i></a>
+          </div>
+
+          <div class="block_content">
+            <div class="sub_head">
+              <div>Currently Coordinating</div> <div class="amount">3</div>
+            </div>
+
+            <div id="inbox_sections_container">
+              <div class="inbox_section" teeupid="25" teeuptimestamp="1466049097717">
+                <div class="top clearfix">
+                  <div class="avatar left">
+                    <img style="height: 65px;" src="/getavatar/dougzytko@gmail.com/" title="doug">
+                  </div>
+                  <div class="info">
+                    <div class="title"><span class="bats-planning status-planning"></span> Fallout 4</div>
+                    <div class="my_status"><span class="bats-going status-going"></span> I'm Going</div>
+                    <div class="sub_thing" style="display:none;">
+                      <div class="bats-going"> 1</div>
+                      <div class="bats-invited"> 2</div>
+                      <div class="bats-updated"> 1d</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="fields clearfix">
+                  <div class="field">
+                    <img src="/static/img/icons/gameplanstates/when_undecided.png">
+                    <span>Tomorrow Afternoon</span>
+                  </div>
+                  <div class="field">
+                    <img src="/static/img/icons/gameplanstates/where_undecided.png">
+                    <span>Earth Lab NJIT</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inbox_section" teeupid="8" teeuptimestamp="1466048620931">
+                <div class="top clearfix">
+                  <div class="avatar left">
+                    <img style="height: 65px;" src="/getavatar/gadjonesq@gmail.com/" title="gadjonesq">
+                  </div>
+                  <div class="info">
+                    <div class="title"><span class="bats-on status-on"></span> Ph.D. Work Meeting</div>
+                    <div class="my_status"><span class="bats-notgoing status-notgoing"></span> I'm Not Going</div>
+                    <div class="sub_thing" style="display:none;">
+                      <div class="bats-going"> 2</div>
+                      <div class="bats-invited"> 5</div>
+                      <div class="bats-updated"> 1d</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="fields clearfix">
+                  <div class="field">
+                    <img src="/static/img/icons/gameplanstates/when_undecided.png">
+                    <span>Next Week</span>
+                  </div>
+                  <div class="field">
+                    <img src="/static/img/icons/gameplanstates/where_decided.png">
+                    <span>Lab</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inbox_section" teeupid="7" teeuptimestamp="1399176003049">
+                <div class="top clearfix">
+                  <div class="avatar left">
+                    <img style="height: 65px;" src="/getavatar/gadjonesq@gmail.com/" title="gadjonesq">
+                  </div>
+                  <div class="info">
+                    <div class="title"><span class="bats-planning status-planning"></span> Hello Rich</div>
+                    <div class="my_status"><span class="bats-invited status-invited"></span> I'm Invited</div>
+                    <div class="sub_thing" style="display:none;">
+                      <div class="bats-going"> 0</div>
+                      <div class="bats-invited"> 5</div>
+                      <div class="bats-updated"> 775d</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="fields clearfix">
+                  <div class="field">
+                    <img src="/static/img/icons/gameplanstates/when_decided.png">
+                    <span>Next Month</span>
+                  </div>
+                  <div class="field">
+                    <img src="/static/img/icons/gameplanstates/where_decided.png">
+                    <span>Anya's</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="view_create" class="block_holder hide panel2">
+        <div class="block">
+          <div class="header">
+            <a class="close_button left" href="#inbox"><i class="bats-close"></i></a>
+            <span class="headerTitle">
+                Create TeeUp
+            </span>
+          </div>
+
+          <div class="block_content">
+            <div class="section" style="padding: 10px;">
+              <div class="select2-container select2-container-multi fullwidth tofield" id="s2id_autogen5" style="width: 100%;">    <ul class="select2-choices">  <li class="select2-search-field">    <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input select2-default" id="s2id_autogen6" style="width: 110%;">  </li></ul><div class="select2-drop select2-drop-multi select2-display-none">   <ul class="select2-results">   <li class="select2-no-results">No matches found</li></ul></div></div><select class="fullwidth tofield select2-offscreen" data-placeholder="To:" multiple="multiple" tabindex="-1">
+
+              <option>larry@coo-e.com</option>
+
+              <option>qberticus@gmail.com</option>
+
+              <option>christopher.bras@gmail.com</option>
+
+              <option>bill@coo-e.com</option>
+
+              <option>kcbrandi@gmail.com</option>
+
+              <option>gadjonesq@gmail.com</option>
+
+              <option>rafaelozjones@gmail.com</option>
+
+              <option>rjm24@njit.edu</option>
+
+              <option>steve.ricken@gmail.com</option>
+
+              <option>sr82@njit.edu</option>
+
+              <option>va58@njit.edu</option>
+
+              <option>arg34@njit.edu</option>
+
+              <option>Nalywayko92@gmail.com</option>
+
+              <option>xxxxxx@awfasd.com</option>
+
+              <option>krishna@gmail.com</option>
+
+              <option>cmarkson@mac.com</option>
+
+              <option>tz@coo-e.com</option>
+
+              <option>kaboukka@hotmail.com</option>
+
+              <option>admin@coo-e.com</option>
+
+              <option>natetest@coo-e.com</option>
+
+              <option>litaplaahsiv@gmail.com</option>
+
+              <option>bushra@coo-e.com</option>
+
+              <option>charl@coo-e.com</option>
+
+              <option>natelaws@gmail.com</option>
+
+              <option>khalilb16@live.com</option>
+
+              <option>nate@coo-e.com</option>
+
+              <option>dave@coo-e.com</option>
+
+              <option>avo3@njit.edu</option>
+
+              <option>julia.marlene.mayer@gmail.com</option>
+
+              <option>r.bradthele@gmail.com</option>
+
+            </select>
+              <input type="text" class="fullwidth titlefield" placeholder="Title:" style="margin-top: 4px;">
+            </div>
+            <div class="section" style="padding: 10px;">
+              <textarea rows="4" class="fullwidth" placeholder="Group Invitiation Message: (Optional)" disabled="disabled"></textarea>
+              <input type="text" class="fullwidth whenfield" placeholder="Suggest When: (Optional)">
+              <input type="text" class="fullwidth wherefield" placeholder="Suggest Where: (Optional)">
+            </div>
+
+            <ul class="button-group even-2">
+              <li><a href="#inbox" class="button secondary cancel">Discard</a></li>
+              <li style="margin: 0;"><a href="#" class="button btn-primary send disabled">Send</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="view_teeup" class="block_holder hide panel2">
+        <div class="block">
+
+          <div class="header">
+            <a class="left close_button" href="#inbox"> <i class="bats-close"></i> </a>
+            <span class="headerTitle">
+                TeeUp
+            </span>
+
+            <a class="header_button right teeup-settings" href="#" title="Teeup Options"><i class="bats-options"></i></a>
+            <a class="header_button right add-friend" href="#" title="Invite Friends"><i class="bats-add-friend"></i></a>
+          </div>
+
+          <div class="block_content">
+            <div id="section_top" class="section clearfix">
+              <div class="title">
+                Some Long Title
+              </div>
+              <div>
+                <ul class="button-group even-2">
+                  <li class="teeup_status">
+                    <a class="status_button dropdown secondary small" data-dropdown="teeup_status_dropdown" href="#">
+                      <div class="bats bats-planning"></div><div class="text"> Planning</div></a>
+
+                    <ul id="teeup_status_dropdown" class="fx-dropdown" data-dropdown-content="">
+                      <li><a href="#" data-state="planning"><div class="bats bats-planning"></div><div class="text"> Planning</div></a></li>
+                      <li><a href="#" data-state="on"><div class="bats bats-on"></div><div class="text"> It's On</div></a></li>
+                      <li><a href="#" data-state="cancelled"><div class="bats bats-cancelled"></div><div class="text"> Cancelled</div></a></li>
+                      <li style="display: none;"><a href="#" data-state="happening">Happening</a></li>
+                      <li style="display: none;"><a href="#" data-state="ended">It's Ended</a></li>
+                    </ul>
+                  </li>
+                  <li class="my_status">
+                    <a class="status_button dropdown secondary small" data-dropdown="my_status_dropdown" href="#">
+                      <div class="bats bats-mightgo"></div><div class="text">Might Go</div>
+                    </a>
+                    <ul id="my_status_dropdown" class="fx-dropdown" data-dropdown-content="">
+                      <li><a data-state="maybe"><div class="bats bats-mightgo"></div><div class="text"> Might Go</div></a></li>
+                      <li><a data-state="going"><div class="bats bats-going"></div><div class="text"> I'm Going</div></a></li>
+                      <li><a data-state="interested"><div class="bats bats-interested"></div><div class="text"> Interested</div></a></li>
+                      <li><a data-state="notgoing"><div class="bats bats-notgoing"></div><div class="text"> Not Going</div></a></li>
+                      <li><a data-state="invited"><div class="bats bats-invited"></div><div class="text"> Invited</div></a></li>
+                      <!--
+                        <li style="display: none;"><a href="#" class="" data-state="backedout"> Back Out</a></li>
+                        <li style="display: none;"><a href="#" class="" data-state="onmyway"> On my way</a></li>
+                        <li style="display: none;"><a href="#" class="" data-state="arrived"> Arrived</a></li>
+                        <li style="display: none;"><a href="#" class="" data-state="invited"> Invited</a></li>
+                       -->
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="section_people" class="section">
+              <div class="sectionTitle clearfix">
+                <div class="text">People</div>
+
+                <div class="right invited"><span>10</span></div>
+                <div class="right bats-invited"></div>
+                <div class="right going"><span>10</span></div>
+                <div class="right bats-going"></div>
+              </div>
+              <div class="people_area clearfix">
+                <div class="person" data-jid="test2@cricket">
+                  <div class="photo" style="" title="test1"></div>
+                </div>
+              </div>
+            </div>
+
+            <div id="section_feed" class="section">
+              <div class="sectionTitle clearfix">
+                <div class="text">Conversation</div>
+                <!--<div class="st updates"><i class="icon-refresh"></i> <span>#</span></div>
+                <div class="st updates angle_left"></div>-->
+              </div>
+
+            </div>
+            <div id="section_card" class="section">
+              <div class="sectionTitle clearfix">
+                <div class="text">Game Plan</div>
+              </div>
+              <div class="card_item" field="when"></div>
+              <div class="card_item" field="where"></div>
+              <a class="button expand modify_rows"><span>Modify Rows</span><span class="arrow-right"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="view_conversation" class="block_holder hide panel3">
+        <div class="block">
+          <div class="header">
+            <a class="close_button left" href="#closepicker"><i class="bats-close"></i></a>
+
+            <span class="headerTitle">
+                Conversation
+            </span>
+
+            <a class="header_button right add-suggestion" href="#" title="New suggestion"><i class="bats-add-sugg"></i></a>
+          </div>
+
+          <div id="conversation_body" class="section block_content">
+
+          </div>
+
+          <div class="section clearfix block_footer message_area">
+            <input id="conversation_text" type="text" class="fullwidth left message_text" placeholder="Type a comment">
+            <a href="#" class="message_send right send"><i class="bats-send-msg"></i></a>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="view_picker_meta" class="block_holder hide panel3">
+        <div class="block pickerbox">
+          <div class="header">
+            <a class="close_button left" href="#closepicker"><i class="bats-close"></i></a>
+
+            <span class="headerTitle">
+                Options for '<span class="title_here">___</span>'
+            </span>
+          </div>
+
+          <div class="block_content">
+            <div class="section">
+              <div class="control-group" style="padding: 10px;">
+                <div class="controls">
+                  <input type="text" class="input title" placeholder="Subject for teeup">
+                </div>
+                <a class="btn btn-inverse" href="#perms" style="width: 94%;">Organizers and permissions</a>
+              </div>
+            </div>
+
+            <div class="section">
+              <div class="sectionTitle clearfix">
+                <div class="text">Auto-change Teeup State</div>
+              </div>
+              <div class="" style="padding: 10px;">
+                <div class="controls">
+                  <label class="radio"><input type="radio" name="metaonif" value="planning">Planning </label>
+                  <label class="radio"><input type="radio" name="metaonif" value="onif">It's on if</label>
+
+                  <div id="metaonifONIF" class="controls hide">
+                    <input type="text" class="input-mini" name="onifamount">
+
+                    <p class="help-inline">
+                      people are going
+                    </p>
+                  </div>
+                  <label class="radio"><input type="radio" name="metaonif" value="on">It's on! </label>
+                </div>
+              </div>
+            </div>
+            <!--
+                    <div class="section">
+                        <div class="sectionTitle clearfix">
+                            <div class="text">Personal Options</div>
+                        </div>
+                        <div class="" style="padding: 10px;">
+                            <a href="#" class="btn btn-inverse disabled" style="width: 94%;margin-bottom: 5px;">Calendar Syncing</a>
+                            <a href="#" class="btn btn-inverse disabled" style="width: 94%;">Notification Level</a>
+                        </div>
+                    </div>
+            -->
+
+            <ul class="button-group even-2">
+              <li><a href="#closepicker" class="button secondary cancel">Cancel</a></li>
+              <li style="margin: 0;"><a href="#done" class="button btn-primary disabled done">Done</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="view_picker_permissions" class="block_holder hide panel4">
+        <div class="block pickerbox">
+          <div class="header">
+            <a class="close_button left" href="#closepickerthird"><i class="bats-close"></i></a>
+            <span class="headerTitle">
+                Organizers and Permissions
+            </span>
+          </div>
+
+          <div class="block_content">
+            <div class="section">
+              <div class="sectionTitle clearfix">
+                <div class="text">Organizers</div>
+              </div>
+              <div class="organizer_list">
+
+              </div>
+            </div>
+
+            <div class="section">
+              <div class="sectionTitle clearfix">
+                <div class="text">Allow non-organizers to:</div>
+              </div>
+              <div class="" style="padding: 10px;">
+
+                <label class="checkbox"><input type="checkbox" checked="checked" disabled="disabled"> Invite others</label>
+                <label class="checkbox"><input type="checkbox" checked="checked" disabled="disabled"> Move suggestion to Card</label>
+                <label class="checkbox"><input type="checkbox" disabled="disabled"> Decide Card items</label>
+                <label class="checkbox"><input type="checkbox" disabled="disabled"> Change Teeup state</label>
+                <label class="checkbox"><input type="checkbox" disabled="disabled"> Modify the Card</label>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="view_suggestion_list" class="block_holder hide panel3">
+        <div class="block pickerbox">
+          <div class="header">
+            <a class="close_button left" href="#closepicker"><i class="bats-close"></i></a>
+
+            <div class="headerTitle">
+              Suggestions
+            </div>
+
+            <a class="header_button right add-suggestion newsuggestion" href="#" title="New suggestion"><i class="bats-add-sugg"></i></a>
+          </div>
+
+          <div class="block_content">
+            <div id="card_sample_area" class="section">
+
+            </div>
+
+
+            <div id="suggestion_area" class="section">
+
+            </div>
+
+            <!--
+            <div class="">
+                <a class="button secondary newsuggestion small expand" href="#">New Suggestion</a>
+            </div>
+            -->
+          </div>
+        </div>
+      </div>
+
+      <div id="view_suggestion_detail" class="block_holder hide panel3">
+        <div class="block double_header">
+          <div class="header_header clearfix">
+            <a class="close_button left" href="#closepicker"><i class="bats-close"></i></a>
+            <span class="headerTitle">
+                Suggestions
+            </span>
+          </div>
+          <div class="header">
+            <a class="close_button left" href="#closepickerthird"><i class="bats-collapse"></i></a>
+
+            <span class="headerTitle">
+                Suggestion Detail
+            </span>
+          </div>
+
+          <div class="block_content">
+            <div class="selected_item section">
+
+            </div>
+
+
+            <div class="picker_body section section-container tabs" data-section="tabs">
+              <section class="active">
+                <p class="title" data-section-title=""><a href="#s_d_all">ALL ACTIVITY</a></p>
+                <div class="content" data-section-content="">
+                  <p id="s_d_all">all</p>
+                </div>
+              </section>
+              <section>
+                <p class="title" data-section-title=""><a href="#s_d_c">COMMENTS</a></p>
+                <div class="content" data-section-content="">
+                  <p id="s_d_c">all</p>
+                </div>
+              </section>
+              <!--<section>
+                <p class="title" data-section-title><a href="#s_d_ld">LIKED BY</a></p>
+                <div class="content" data-section-content>
+                  <p id="s_d_ld">
+                    <div class="ld_header"><i class="icon-thumbs-up icon-white"></i> Liked by</div>
+                    <ul class="ld_section likes"></ul>
+                    <div class="ld_header"><i class="icon-thumbs-down icon-white"></i> Disliked by</div>
+                    <ul class="ld_section dislikes"></ul>
+                  </p>
+                </div>
+              </section> -->
+            </div>
+          </div>
+
+          <div class="section clearfix block_footer message_area">
+            <input id="suggestion_message_text" type="text" class="fullwidth left message_text" placeholder="Write a comment">
+            <a href="#" class="message_send right send"><i class="bats-send-msg"></i></a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="view_people" class="block_holder hide panel3">
+        <div class="block pickerbox">
+          <div class="header">
+            <a class="close_button left" href="#closepicker"><i class="bats-close"></i></a>
+            <span class="headerTitle">
+                People
+            </span>
+            <a class="header_button right btn_invite" href="#" title="Invite Friends"><i class="bats-add-friend"></i></a>
+          </div>
+
+          <div class="block_content">
+            <div class="section" style="width: 370px;">
+              <div class="top_people_group ">
+
+              </div>
+            </div>
+            <div class="summary_counts">
+
+            </div>
+            <div class="full_list">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="view_people_detail" class="block_holder hide panel3">
+        <div class="block double_header">
+          <div class="header_header clearfix">
+            <a class="close_button left" href="#closepicker"><i class="bats-close"></i></a>
+            <span class="headerTitle">
+                People
+            </span>
+          </div>
+          <div class="header">
+            <a class="close_button left" href="#closepickerthird"><i class="bats-collapse"></i></a>
+            <span class="headerTitle">
+                Participant Detail
+            </span>
+            <a class="header_button right nudge" style="" href="#"><i class="bats-nudge"></i></a>
+          </div>
+
+          <div class="block_content">
+            <div class="profile_section section" style="padding: 5px 5px 0 5px;">
+
+            </div>
+
+            <div class="picker_body section section-container tabs" data-section="tabs">
+              <section class="active">
+                <p class="title" data-section-title=""><a href="#p_d_all">All Activity</a></p>
+                <div class="content" data-section-content="">
+                  <p id="p_d_all">all</p>
+                </div>
+              </section>
+              <section>
+                <p class="title" data-section-title=""><a href="#p_d_c">Comments</a></p>
+                <div class="content" data-section-content="">
+                  <p id="p_d_c">comments.</p>
+                </div>
+              </section>
+              <section>
+                <p class="title" data-section-title=""><a href="#p_d_s">Suggested</a></p>
+                <div class="content" data-section-content="">
+                  <p id="p_d_s">unavailable</p>
+                </div>
+              </section>
+              <!--<section>
+                <p class="title" data-section-title><a href="#p_d_c">Likes</a></p>
+                <div class="content" data-section-content>
+                  <p id="p_d_ld">
+                    <div class="ld_header"><i class="icon-thumbs-up icon-white"></i> Liked</div>
+                    <ul class="ld_section likes"></ul>
+                    <div class="ld_header"><i class="icon-thumbs-down icon-white"></i> Disliked</div>
+                    <ul class="ld_section dislikes"></ul>
+                  </p>
+                </div>
+              </section> -->
+            </div>
+          </div>
+
+          <div class="section clearfix block_footer message_area">
+            <input id="" type="text" class="fullwidth left message_text" placeholder="Write a comment to">
+            <a href="#" class="message_send right send"><i class="bats-send-msg"></i></a>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div id="view_people_invite" class="block_holder hide panel3">
+        <div class="block double_header">
+          <div class="header_header">
+            <a class="close_button left" href="#closepicker"><i class="bats-close"></i></a>
+            <span class="headerTitle">
+                People
+            </span>
+          </div>
+          <div class="header">
+            <a class="close_button left" href="#closepickerthird"><i class="bats-collapse"></i></a>
+            <span class="headerTitle">
+                Invite Friends
+            </span>
+          </div>
+
+          <div class="block_content">
+            <div class="section" style="padding: 10px;">
+              <div class="select2-container select2-container-multi fullwidth tofield" id="s2id_autogen7" style="width: 100%;">    <ul class="select2-choices">  <li class="select2-search-field">    <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input select2-default" id="s2id_autogen8" style="width: 110%;">  </li></ul><div class="select2-drop select2-drop-multi select2-display-none">   <ul class="select2-results">   </ul></div></div><input type="text" class="fullwidth tofield select2-offscreen" placeholder="To: " tabindex="-1">
+              <textarea rows="6" class="fullwidth" placeholder="Message: (Optional)" style="margin-top: 4px"></textarea>
+            </div>
+
+
+            <ul class="button-group even-2">
+              <li><a href="#closepickerthird" class="button small secondary cancel">Cancel</a></li>
+              <li><a href="#" class="button small send disabled">Send Invite</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="visiblelogs" class="block_holde hide">
+        <div class="block pickerbox">
+          <div class="section">
+            <div class="sectionTitle clearfix">
+              <div class="text">Timer Logs</div>
+            </div>
+            <div id="silly_logs" style="padding:10px;">
+              <div>jabber attach took:  3252 ms</div><div>bulk update took:  1147 ms</div><div>rendering inbox took:  10 ms</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /main row -->
+  </div>
+</div>

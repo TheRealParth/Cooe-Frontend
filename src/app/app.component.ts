@@ -4,6 +4,7 @@ import {LoggedInRouterOutlet} from './LoggedInOutlet';
 import {HomeComponent} from './components/home.component';
 import {LoginComponent} from './components/login.component';
 import {ProfileComponent} from './components/profile.component';
+import {TeeupsComponent} from './components/teeups.component';
 
 import { MD_INPUT_DIRECTIVES, MdInput } from '@angular2-material/input';
 
@@ -27,6 +28,7 @@ import { MdProgressCircle, MdSpinner } from '@angular2-material/progress-circle'
   { path: '/home', component: HomeComponent, name: 'Home' },
   { path: '/login', component: LoginComponent, name: 'Login' },
   { path: '/profile', component: ProfileComponent, name: 'Profile' },
+  { path: '/teeups', component: TeeupsComponent, name: 'Teeups' }
   // { path: '/signup', component: Signup, as: 'Signup' }
 ])
 
