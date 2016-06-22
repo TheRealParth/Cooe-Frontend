@@ -5459,6 +5459,9 @@ table tfoot tr td {
 .has-tip.tip-left, .has-tip.tip-right {
   float: none !important;
 }
+.has-dropdown {
+  margin-right: 15px;
+}
 
 /* line 45, ../sass/foundation/components/_tooltips.scss */
 .tooltip {
@@ -7472,7 +7475,6 @@ img.grayscale {
   border: inset 5px;
   border-top-style: solid;
   margin-top: -2.5px;
-  margin-right: 15px;
   position: absolute;
   top: 25px;
   right: 0;

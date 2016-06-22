@@ -101,50 +101,92 @@
       </div>
 
 
-      <div id="view_inbox" class="block_holder panel1">
+      <div id="view_create" class="block_holder hide panel2">
         <div class="block">
           <div class="header">
+            <a class="close_button left" href="#inbox"><i class="bats-close"></i></a>
             <span class="headerTitle">
-                My TeeUps:
+                Create TeeUp
             </span>
-            <a id="create_button"  class="header_button right" href="#create" title="Create Teeup"><i class="bats-add"></i></a>
           </div>
 
           <div class="block_content">
-            <div class="sub_head">
-              <div>Currently Coordinating</div> <div class="amount">{{teeups.length}}</div>
+            <div class="section" style="padding: 10px;">
+              <div class="select2-container select2-container-multi fullwidth tofield" id="s2id_autogen5" style="width: 100%;">    <ul class="select2-choices">  <li class="select2-search-field">    <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input select2-default" id="s2id_autogen6" style="width: 110%;">  </li></ul><div class="select2-drop select2-drop-multi select2-display-none">   <ul class="select2-results">   <li class="select2-no-results">No matches found</li></ul></div></div><select class="fullwidth tofield select2-offscreen" data-placeholder="To:" multiple="multiple" tabindex="-1">
+
+              <option>larry@coo-e.com</option>
+
+              <option>qberticus@gmail.com</option>
+
+              <option>christopher.bras@gmail.com</option>
+
+              <option>bill@coo-e.com</option>
+
+              <option>kcbrandi@gmail.com</option>
+
+              <option>gadjonesq@gmail.com</option>
+
+              <option>rafaelozjones@gmail.com</option>
+
+              <option>rjm24@njit.edu</option>
+
+              <option>steve.ricken@gmail.com</option>
+
+              <option>sr82@njit.edu</option>
+
+              <option>va58@njit.edu</option>
+
+              <option>arg34@njit.edu</option>
+
+              <option>Nalywayko92@gmail.com</option>
+
+              <option>xxxxxx@awfasd.com</option>
+
+              <option>krishna@gmail.com</option>
+
+              <option>cmarkson@mac.com</option>
+
+              <option>tz@coo-e.com</option>
+
+              <option>kaboukka@hotmail.com</option>
+
+              <option>admin@coo-e.com</option>
+
+              <option>natetest@coo-e.com</option>
+
+              <option>litaplaahsiv@gmail.com</option>
+
+              <option>bushra@coo-e.com</option>
+
+              <option>charl@coo-e.com</option>
+
+              <option>natelaws@gmail.com</option>
+
+              <option>khalilb16@live.com</option>
+
+              <option>nate@coo-e.com</option>
+
+              <option>dave@coo-e.com</option>
+
+              <option>avo3@njit.edu</option>
+
+              <option>julia.marlene.mayer@gmail.com</option>
+
+              <option>r.bradthele@gmail.com</option>
+
+            </select>
+              <input type="text" class="fullwidth titlefield" placeholder="Title:" style="margin-top: 4px;">
+            </div>
+            <div class="section" style="padding: 10px;">
+              <textarea rows="4" class="fullwidth" placeholder="Group Invitiation Message: (Optional)" disabled="disabled"></textarea>
+              <input type="text" class="fullwidth whenfield" placeholder="Suggest When: (Optional)">
+              <input type="text" class="fullwidth wherefield" placeholder="Suggest Where: (Optional)">
             </div>
 
-            <div id="inbox_sections_container">
-              <div *ngFor="let teeup of teeups" class="inbox_section" teeupid="25">
-                <a [routerLink]="['/Teeup', {id: teeup.id}]">
-                  <div class="top clearfix">
-                    <div class="avatar left">
-                      <img style="height: 65px;" src="/getavatar/dougzytko@gmail.com/" title="doug">
-                    </div>
-                    <div class="info">
-                      <div class="title"><span class="bats-planning status-planning"></span>{{teeup.name}}</div>
-                      <div class="my_status"><span class="bats-going status-going"></span>{{teeup.decision}}</div>
-                      <div class="sub_thing" style="display:none;">
-                        <div class="bats-going"> {{teeup.going}}</div>
-                        <div class="bats-invited"> 2</div>
-                        <div class="bats-updated"> 1d</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="fields clearfix">
-                    <div class="field">
-                      <img src="/assets/img/when_undecided.png">
-                      <span>{{teeup.time}}</span>
-                    </div>
-                    <div class="field">
-                      <img src="/assets/img/where_undecided.png">
-                      <span>{{teeup.location}}</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
+            <ul class="button-group even-2">
+              <li><a href="#inbox" class="button secondary cancel">Discard</a></li>
+              <li style="margin: 0;"><a href="#" class="button btn-primary send disabled">Send</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -164,3 +206,4 @@
     </div> <!-- /main row -->
   </div>
 </div>
+

@@ -93,7 +93,7 @@
 @font-face {
   font-family: 'coo-e-bats';
   src: url("fonts/bats/coo-e-bats.191f3c0ca886.eot");
-  src: url("fonts/bats/coo-e-bats.191f3c0ca886.eot?#iefix") format("embedded-opentype"), url("fonts/bats/coo-e-bats.11139681acfa.woff") format("woff"), url("fonts/bats/coo-e-bats.0a2e6b5d1978.ttf") format("truetype"), url("fonts/bats/coo-e-bats.828dbd40e95e.svg#coo-e-bats") format("svg");
+  src: url("fonts/bats/coo-e-bats.191f3c0ca886.eot?#iefix") format("embedded-opentype"), url("assets/css/fonts/bats/coo-e-bats.11139681acfa.woff") format("woff"), url("fonts/bats/coo-e-bats.0a2e6b5d1978.ttf") format("truetype"), url("fonts/bats/coo-e-bats.828dbd40e95e.svg#coo-e-bats") format("svg");
   font-weight: normal;
   font-style: normal;
 }

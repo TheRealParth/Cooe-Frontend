@@ -1,161 +1,331 @@
-<div id="bar1">
-  <h3>X</h3>
-  <h3>TeeUp</h3>
-  <i class="fa fa-list"></i>
-  <i class="fa fa-user-plus"></i>
+<nav id="topbar">
+
+  <ul class="left title-area">
+
+    <li class="has-dropdown"><a class="dd-btn"><img src="/assets/img/logo.png"></a>
+      <ul class="dropdown cooelink">
+        <li>
+          <a href="/teeup/">
+            <div class="bats-logo"></div>
+            <span>My TeeUps</span>
+          </a>
+        </li>
+        <li>
+          <a href="/teeup/#create">
+            <div class="bats-add"></div>
+            <span>Create TeeUps</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-user"></div>
+            <span>My Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-contacts"></div>
+            <span>Contacts</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-calendar"></div>
+            <span>Calendar</span>
+          </a>
+        </li>
+        <li>
+          <a href="/settings/">
+            <div class="bats-settings"></div>
+            <span>Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-send-msg"></div>
+            <span>Send Feedback</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-tour"></div>
+            <span>Tour</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+
+
+  <ul class="left">
+
+
+
+
+  </ul>
+
+  <ul class="right">
+    <li class="has-dropdown">
+      <a class="dd-btn">
+        <img class="rounded" src="/assets/img/avatar.png" title="dougzytko@gmail.com" style="width:30px; height: 30px;">
+        <span class="usernametxt"><!--<span id="myjidhere"></span>--> doug</span>
+      </a>
+      <ul class="dropdown">
+        <li><a href="/invite/email/">Invite Friends</a></li>
+        <li><a href="/settings/">Settings</a></li>
+        <li class="dividerx"></li>
+        <li><a href="/logout/">Logout</a></li>
+      </ul>
+    </li>
+  </ul>
+
+</nav>
+<div class="row">
+  <div id="overlayError" class="small-10 columns small-centered alert-box alert" data-alert="" style="display: none;">
+    <div class="textHere"><strong>Error</strong> goes here</div>
+    <!-- <a href="#" class="close">&times;</a> -->
+  </div>
+
+  <div id="loadingScreen" class="small-10 columns small-centered alert-box" style="display: none;">
+    Loading<span class="dot_area">.4</span>
+  </div>
 </div>
-<div class="container">
-  <div class="teeupHeader">
-    <h2>Brainstorming Session</h2>
-    <div class="halfContainer">
-      <div class="col-md-6">
-        <i class="fa fa-power-off"></i>
-        <span>Planning</span>
-      </div>
-      <div class="verticalLine"></div>
-      <div class="col-md-6">
-        <i class="fa fa-arrow-right"></i>
-        <span>I'm Going</span>
-      </div>
-    </div>
-  </div>
-  <div class="peopleBox">
-    <div class="headerStrip">
-      <span>PEOPLE</span>
-				<span class="indicator2">
-					<i class="fa fa-envelope"></i>
-					<span>12</span>
-				</span>
-				<span class="indicator1">
-					<i class="fa fa-arrow-right"></i>
-					<span>11</span>
-				</span>
+<div class="table_holder">
+  <div class="main_table" style="width: 903.5px;">
+    <div class="main_row">
 
-    </div>
-    <div class="boxContent">
-      <div class="avatarStrip">
-        <img><img><img><img><img><img>
+      <div id="view_fake" class="block_holder" style="width: 521.5px;">
+        <div class="block">
+        </div>
       </div>
-      <div class="bottomStrip">
-					<span id="weirdLeftThing">
-						<span>ON WITH</span>
-						<span class="bigger">12</span>
-					</span>
-					<span class="progressBar">
-						<span class="progress"></span>
-						<span class="progressRemaining">1 MORE NEEDED</span>
-					</span>
-      </div>
-    </div>
-  </div>
-  <div class="conversationBox">
-    <div class="headerStrip">
-      <span>CONVERSATION</span>
-				<span class="indicator1">
-					<i class="fa fa-exclamation-circle"></i>
-					<span>4</span>
-				</span>
-      <div class="conversation">
 
-        <div class="message fromUser">
-          <div class="timestamp">JAN 14, 2012 4:41 PM</div>
-          <div class="messageRow">
-            <img>
-            <div class="messageBody">
-								<span class="messageInfo">
-									<a class="messageUser">Rich</a>
-									<p class="messageText"> about </p>
-									<a class="messageWhere">Werblin Gym</a>
-								</span>
-              <span class="messageBodyText">Much better. I'm in.</span>
+      <div id="view_teeup" class="block_holder panel2">
+        <div class="block">
+
+          <div class="header">
+            <a class="left close_button" href="/#/teeups"> <i class="bats-close"></i> </a>
+            <span class="headerTitle">
+                TeeUp
+            </span>
+
+            <a class="header_button right teeup-settings" href="#" title="Teeup Options"><i class="bats-options"></i></a>
+            <a class="header_button right add-friend" href="#" title="Invite Friends"><i class="bats-add-friend"></i></a>
+          </div>
+
+          <div class="block_content">
+            <div id="section_top" class="section clearfix">
+              <div class="title">{{tud.name}}</div>
+              <div>
+                <ul class="button-group even-2">
+                  <li class="teeup_status off">
+                    <a class="status_button dropdown secondary small" data-dropdown="teeup_status_dropdown" href="#" data-state="planning"><div class="bats bats-planning"></div><div class="text"> Planning</div></a>
+
+                    <ul id="teeup_status_dropdown" class="fx-dropdown" data-dropdown-content="" style="position: absolute; top: 172px; left: -99999px;">
+                      <li style="display: none;"><a href="#" data-state="planning"><div class="bats bats-planning"></div><div class="text"> Planning</div></a></li>
+                      <li><a href="#" data-state="on"><div class="bats bats-on"></div><div class="text"> It's On</div></a></li>
+                      <li><a href="#" data-state="cancelled"><div class="bats bats-cancelled"></div><div class="text"> Cancelled</div></a></li>
+                      <li style="display: none;"><a href="#" data-state="happening">Happening</a></li>
+                      <li style="display: none;"><a href="#" data-state="ended">It's Ended</a></li>
+                    </ul>
+                  </li>
+                  <li class="my_status">
+                    <a class="status_button dropdown secondary small" data-dropdown="my_status_dropdown" href="#" data-state="invited"><div class="bats bats-invited"></div><div class="text"> Invited</div></a>
+                    <ul id="my_status_dropdown" class="fx-dropdown" data-dropdown-content="">
+                      <li><a data-state="maybe"><div class="bats bats-mightgo"></div><div class="text"> Might Go</div></a></li>
+                      <li><a data-state="going"><div class="bats bats-going"></div><div class="text"> I'm Going</div></a></li>
+                      <li><a data-state="interested"><div class="bats bats-interested"></div><div class="text"> Interested</div></a></li>
+                      <li><a data-state="notgoing"><div class="bats bats-notgoing"></div><div class="text"> Not Going</div></a></li>
+                      <li style="display: none;"><a data-state="invited"><div class="bats bats-invited"></div><div class="text"> Invited</div></a></li>
+                      <!--
+                        <li style="display: none;"><a href="#" class="" data-state="backedout"> Back Out</a></li>
+                        <li style="display: none;"><a href="#" class="" data-state="onmyway"> On my way</a></li>
+                        <li style="display: none;"><a href="#" class="" data-state="arrived"> Arrived</a></li>
+                        <li style="display: none;"><a href="#" class="" data-state="invited"> Invited</a></li>
+                       -->
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="section_people" class="section">
+              <div class="sectionTitle clearfix">
+                <div class="text">People</div>
+
+                <div class="right invited"><span>5</span></div>
+                <div class="right bats-invited"></div>
+                <div class="right going"><span>0</span></div>
+                <div class="right bats-going"></div>
+              </div>
+              <div class="people_area clearfix">
+                <div class="person" data-jid="gadjonesq#gmail.com@lotus">
+                  <div class="photo" style="background-image:url(/getavatar/gadjonesq@gmail.com/)" title="gadjonesq">
+                    <div class="convo_sprite creator"></div>
+                    <div class="convo_sprite status attend_mightgo"></div>
+                  </div>
+                </div>
+
+                <div class="person" data-jid="julia.marlene.mayer#gmail.com@lotus">
+                  <div class="photo" style="background-image:url(/getavatar/julia.marlene.mayer@gmail.com/)" title="julia.marlene.mayer">
+
+                    <div class="convo_sprite status attend_invited"></div>
+                  </div>
+                </div>
+
+                <div class="person" data-jid="steve.ricken#gmail.com@lotus">
+                  <div class="photo" style="background-image:url(/getavatar/steve.ricken@gmail.com/)" title="steve.ricken">
+
+                    <div class="convo_sprite status attend_invited"></div>
+                  </div>
+                </div>
+
+                <div class="person" data-jid="qberticus#gmail.com@lotus">
+                  <div class="photo" style="background-image:url(/getavatar/qberticus@gmail.com/)" title="qberticus">
+
+                    <div class="convo_sprite status attend_mightgo"></div>
+                  </div>
+                </div>
+
+                <div class="person" data-jid="dougzytko#gmail.com@lotus">
+                  <div class="photo" style="background-image:url(/getavatar/dougzytko@gmail.com/)" title="doug">
+
+                    <div class="convo_sprite status attend_invited"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="section_feed" class="section">
+              <div class="sectionTitle clearfix">
+                <div class="text">Conversation</div>
+                <!--<div class="st updates"><i class="icon-refresh"></i> <span>#</span></div>
+                <div class="st updates angle_left"></div>-->
+              </div>
+
+              <div class="conversation-box clearfix" changed-by="gadjonesq#gmail.com@lotus" data-sug-field="where" data-sug-id="13991759967850000">
+                <div class="conversation-item update-type-2">
+
+                  <div class="icon-holder">
+                    <div class="convo_sprite where_madeGameplan"></div>
+                  </div>
+                  <div><a class="convo-name">gadjonesq</a> moved <span class="field-value">Anya's</span> to Card</div>
+                </div>
+                <div class="timestamp">
+                  May 4, 2014 0:00 AM    </div>
+              </div><div class="conversation-box clearfix" changed-by="dougzytko#gmail.com@lotus" data-sug-field="when" data-sug-id="13789384673680000">
+              <div class="conversation-item update-type-6">
+
+                <div class="icon-holder">
+                  <div class="convo_sprite thumb_up"></div>
+                </div>
+                <div>
+                  <a class="convo-name">doug</a> likes
+                  <span class="field-value">Next Month</span> as <span class="field-name">when</span>
+                </div>
+              </div>
+              <div class="timestamp">
+                Jun 20, 2016 10:16 PM    </div>
+            </div><div class="conversation-box clearfix" changed-by="dougzytko#gmail.com@lotus" data-sug-field="where" data-sug-id="13991759967850000">
+              <div class="conversation-item update-type-6">
+
+                <div class="icon-holder">
+                  <div class="convo_sprite thumb_up"></div>
+                </div>
+                <div>
+                  <a class="convo-name">doug</a> likes
+                  <span class="field-value">Anya's</span> as <span class="field-name">where</span>
+                </div>
+              </div>
+              <div class="timestamp">
+                Jun 20, 2016 10:16 PM    </div>
+            </div></div>
+            <div id="section_card" class="section">
+              <div class="sectionTitle clearfix">
+                <div class="text">Game Plan</div>
+              </div>
+
+
+
+
+
+
+              <div class="card_item" field="when" sug-id="13789384673680000">
+                <div class="status">
+                  <a class="button dropdown disabled" data-dropdown="" href="#">
+                    <img src="/assets/img/when_decided.png">
+
+                  </a>
+                  <ul id="dropdown_card_when_13789384673680000" class="f-dropdown" data-dropdown-content="">
+                    <li><a tabindex="-1" href="#" class="suggest_new">Suggest new based on this</a></li>
+                    <li><a tabindex="-1" href="#" class="suggest_replace">Replace Suggestion</a></li>
+                    <li><a tabindex="-1" href="#" class="suggest_withdraw">Withdraw Suggestion</a></li>
+                  </ul>
+                </div>
+                <div class="value"> Next Month </div>
+                <div class="likedislike">
+                  <ul class="buttons">
+                    <li><a class="like like_button picked" href="#like">2</a></li>
+                    <li><a class="dislike like_button " href="#dislike">0</a></li>
+                  </ul>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+              <div class="card_item" field="where" sug-id="13991759967850000">
+                <div class="status">
+                  <a class="button dropdown disabled" data-dropdown="" href="#">
+                    <img src="/assets/img/where_decided.png">
+
+                  </a>
+                  <ul id="dropdown_card_where_13991759967850000" class="f-dropdown" data-dropdown-content="">
+                    <li><a tabindex="-1" href="#" class="suggest_new">Suggest new based on this</a></li>
+                    <li><a tabindex="-1" href="#" class="suggest_replace">Replace Suggestion</a></li>
+                    <li><a tabindex="-1" href="#" class="suggest_withdraw">Withdraw Suggestion</a></li>
+                  </ul>
+                </div>
+                <div class="value"> Anya's </div>
+                <div class="likedislike">
+                  <ul class="buttons">
+                    <li><a class="like like_button picked" href="#like">1</a></li>
+                    <li><a class="dislike like_button " href="#dislike">0</a></li>
+                  </ul>
+                </div>
+              </div>
+
+
+
+
+
+
+              <a class="button expand modify_rows"><span>Modify Rows</span><span class="arrow-right"></span></a>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="message update">
-          <div class="timestamp">JAN 14, 2012 4:43 PM</div>
-          <div class="messageRow">
-            <i class="fa fa-arrow-right"></i>
-            <a class="messageUser">Rich</a>
-            <p class="messageText"> is going </p>
+      <div id="visiblelogs" class="block_holde hide">
+        <div class="block pickerbox">
+          <div class="section">
+            <div class="sectionTitle clearfix">
+              <div class="text">Timer Logs</div>
+            </div>
+            <div id="silly_logs" style="padding:10px;">
+              <div>jabber attach took:  3252 ms</div><div>bulk update took:  1147 ms</div><div>rendering inbox took:  10 ms</div></div>
           </div>
         </div>
-
-        <div class="message update">
-          <div class="timestamp">JAN 14, 2012 4:43 PM</div>
-          <div class="messageRow">
-            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-            <a class="messageUser">Nate</a>
-            <p class="messageText"> likes </p>
-            <a class="messageWhere">Werblin Gym</a>
-            <p class="messageText"> as </p>
-            <p class="messageItem">WHERE</p>
-
-          </div>
-        </div>
-
       </div>
-    </div>
+
+    </div> <!-- /main row -->
   </div>
-  <div class="gamePlanBox">
-    <div class="headerStrip">
-      <span>GAME PLAN</span>
-				<span class="indicator1">
-					<i class="fa fa-exclamation-circle"></i>
-					<span>3</span>
-				</span>
-    </div>
-    <div class="gamePlans">
-      <div class="gamePlan">
-					<span class="gamePlanRow time">
-						<i class="fa fa-clock-o"></i>
-					</span>
-					<span class="gamePlanBody">
-						<div class="gamePlanTop">
-							<p>Wednesday, Jan 18</p>
-						</div>
-						<div class="gamePlanBottom">
-							<p>4:00 PM</p>
-						</div>
-					</span>
-					<span class="gamePlanLikes">
-						<span class="likesColumn">
-							<i class="fa fa-thumbs-o-up"></i>
-							<div>3</div>
-						</span>
-						<span class="likesColumn">
-							<i class="fa fa-thumbs-o-down"></i>
-							<div>0</div>
-						</span>
-					</span>
-      </div>
-
-      <div class="gamePlan">
-					<span class="gamePlanRow location">
-						<i class="fa fa-map-marker"></i>
-					</span>
-					<span class="gamePlanBody">
-						<div class="gamePlanTop">
-							<p>Werblin Gym</p>
-						</div>
-						<div class="gamePlanBottom">
-							<p>Busch Campus</p>
-						</div>
-					</span>
-					<span class="gamePlanLikes">
-						<span class="likesColumn">
-							<i class="fa fa-thumbs-o-up"></i>
-							<div>2</div>
-						</span>
-						<span class="likesColumn">
-							<i class="fa fa-thumbs-o-down"></i>
-							<div>1</div>
-						</span>
-					</span>
-      </div>
-
-    </div>
-  </div>
-  <div class="modifyRows">Modify Rows</div>
-
 </div>

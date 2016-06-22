@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RouterLink, Router, ROUTER_PROVIDERS, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {RouterLink} from '@angular/router-deprecated';
 import {TeeupService} from '../services/teeup.service.ts';
 import { Teeup } from '../services/teeup';
 
@@ -14,9 +14,9 @@ let template = require('../static/teeups.html');
 })
 
 export class TeeupsComponent {
-	teeups: Teeup[];
+	teeups: Teeup[] = [];
+  teeupCount: Number;
 	constructor(private teeupService: TeeupService){}
-
 	getTeeups(){
 		this.teeupService.getTeeups().then(teeups => this.teeups = teeups);
 	}
