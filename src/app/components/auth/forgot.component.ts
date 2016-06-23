@@ -13,6 +13,7 @@ let template = require('../../static/forgot.html');
   directives: [RouterLink, CORE_DIRECTIVES, FORM_DIRECTIVES, MD_INPUT_DIRECTIVES ],
   providers: [UserService, SignUpComponent],
   template: template,
+
 })
 export class ForgotComponent {
   localState = {username: '', password: ''};

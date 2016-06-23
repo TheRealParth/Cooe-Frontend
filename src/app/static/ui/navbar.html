@@ -3,7 +3,7 @@
   <ul class="left title-area">
 
     <li class="has-dropdown"><a (click)="toggleDropDown()" class="dd-btn"><img src="/assets/img/logo.png"></a>
-      <ul (click)="toggleDropDown()" *ngIf="isDropDownOpen" class="dropdown cooelink open">
+      <ul (click)="toggleDropDown()" *ngIf="localState.isDropDownOpen" class="dropdown cooelink open">
         <li>
           <a href="../#/teeups/">
             <div class="bats-logo"></div>
@@ -67,7 +67,7 @@
         <img class="rounded" src="/assets/img/avatar.png" title="dougzytko@gmail.com" style="width:30px; height: 30px;">
         <span class="usernametxt"><!--<span id="myjidhere"></span>--> doug</span>
       </a>
-      <ul (click)="toggleDropDown()"*ngIf="isDropDownOpen"  class="dropdown cooelink">
+      <ul (click)="toggleDropDown()"*ngIf="localState.isDropDownOpen"  class="dropdown cooelink">
         <li><a href="/invite/email/">Invite Friends</a></li>
         <li><a href="/settings/">Settings</a></li>
         <li class="dividerx"></li>
@@ -79,22 +79,22 @@
 </nav>
 <div *ngIf="!isLoggedIn" id='top-row' class="row">
   <div class="control-bar">
-    <div (click)="toggleDropDown()"  id="open-close-btn" [class.bats-opened]="isDropDownOpen" [class.bats-closed]="!isDropDownOpen"class="control-btn"></div>
-    <div class="control-menu"  *ngIf="isDropDownOpen">
+    <div (click)="toggleDropDown()"  id="open-close-btn" [class.bats-opened]="localState.isDropDownOpen" [class.bats-closed]="!localState.isDropDownOpen"class="control-btn"></div>
+    <div class="control-menu"  *ngIf="localState.isDropDownOpen">
       <a [routerLink]="['./Home']" class="control-btn home-btn bats-logo" (mouseenter)="setNavTitle('Home')" data-txt="Home"></a>
       <a  class="control-btn about-btn bats-tour" (mouseenter)="setNavTitle('About')" data-txt="About"></a>
       <a (click)="toggleContactForm()" (mouseenter)="setNavTitle('Contact')" class="control-btn contact-btn bats-invited" data-txt="Contact" ></a>
-      <div class="control-text hide-for-small">{{navTitle}}</div>
+      <div class="control-text hide-for-small">{{localState.navTitle}}</div>
     </div>
   </div>
-  <div *ngIf="isContactFormOpen" id="contact-form" style="display:block;" class="dropdown-box">
+  <div *ngIf="localState.isContactFormOpen" id="contact-form" style="display:block;" class="dropdown-box">
     <strong>Let us know what's on your mind:</strong>
     <input type="text" placeholder="Your name">
     <input type="text" placeholder="Your email">
     <textarea placeholder="Your thoughts"></textarea>
     <input type="submit" class="btn-submit" value="Submit">
   </div>
-  <div *ngIf="isLoginFormOpen" id="login-form" class="dropdown-box">
+  <div *ngIf="localState.isLoginFormOpen" id="login-form" class="dropdown-box">
     <strong>Username:</strong>
     <input type="text">
     <strong>Password:</strong>

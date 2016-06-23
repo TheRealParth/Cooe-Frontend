@@ -11,11 +11,13 @@ let template = require('../static/ui/navbar.html');
 })
 
 export class NavbarComponent implements OnInit {
-  isLoggedIn: Boolean = false;
-  isDropDownOpen: Boolean = false;
-  isContactFormOpen: Boolean = false;
-  isLoginFormOpen: Boolean = false;
-  navTitle: string = 'Home';
+  localState = {
+    isLoggedIn: false,
+    isDropDownOpen: false,
+    isContactFormOpen: false,
+    isLoginFormOpen: false,
+    navTitle: 'Home'
+  };
 
   //name default values
   constructor( private userService: UserService){
@@ -23,21 +25,21 @@ export class NavbarComponent implements OnInit {
 
   }
   setNavTitle(text: string){
-    this.navTitle = text;
+    this.localState.navTitle = text;
   }
   toggleDropDown(){
-    this.isDropDownOpen = !(this.isDropDownOpen);
-    console.dir(this.isDropDownOpen);
+    this.localState.isDropDownOpen = !(this.localState.isDropDownOpen);
+    console.dir(this.localState.isDropDownOpen);
   }
   toggleContactForm(){
-    this.isContactFormOpen = !(this.isContactFormOpen);
-    console.dir(this.isContactFormOpen);
+    this.localState.isContactFormOpen = !(this.localState.isContactFormOpen);
+    console.dir(this.localState.isContactFormOpen);
   }
   toggleLoginForm(){
-    this.isLoginFormOpen = !(this.isLoginFormOpen);
+    this.localState.isLoginFormOpen = !(this.localState.isLoginFormOpen);
   }
   ngOnInit(){
-    console.log(this.isLoggedIn);
+    console.log(this.localState.isLoggedIn);
   }
 
 }

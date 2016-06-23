@@ -16,8 +16,7 @@ let template = require('../../static/login.html');
 })
 export class LoginComponent {
   localState = {username: '', password: ''};
-  constructor(private userService: UserService, private router: Router, private appState: AppState) {
-    this.appState.set("username", "");
+  constructor(private userService: UserService, private router: Router) {
     this.userService = userService;
     this.router = router;
   }
