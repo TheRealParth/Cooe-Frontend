@@ -1,209 +1,116 @@
-<nav id="topbar">
 
-  <ul class="left title-area">
+  <div class="table_holder">
+    <div class="main_table">
+      <div class="main_row">
 
-    <li class="has-dropdown"><a class="dd-btn"><img src="/assets/img/logo.png"></a>
-      <ul class="dropdown cooelink">
-        <li>
-          <a href="/teeup/">
-            <div class="bats-logo"></div>
-            <span>My TeeUps</span>
-          </a>
-        </li>
-        <li>
-          <a href="/teeup/#create">
-            <div class="bats-add"></div>
-            <span>Create TeeUps</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-user"></div>
-            <span>My Profile</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-contacts"></div>
-            <span>Contacts</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-calendar"></div>
-            <span>Calendar</span>
-          </a>
-        </li>
-        <li>
-          <a href="/settings/">
-            <div class="bats-settings"></div>
-            <span>Settings</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-send-msg"></div>
-            <span>Send Feedback</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-tour"></div>
-            <span>Tour</span>
-          </a>
-        </li>
-      </ul>
-    </li>
-
-  </ul>
-
-
-  <ul class="left">
-
-
-
-
-  </ul>
-
-  <ul class="right">
-    <li class="has-dropdown">
-      <a class="dd-btn">
-        <img class="rounded" src="/assets/img/avatar.png" title="dougzytko@gmail.com" style="width:30px; height: 30px;">
-        <span class="usernametxt"><!--<span id="myjidhere"></span>--> doug</span>
-      </a>
-      <ul class="dropdown">
-        <li><a href="/invite/email/">Invite Friends</a></li>
-        <li><a href="/settings/">Settings</a></li>
-        <li class="dividerx"></li>
-        <li><a href="/logout/">Logout</a></li>
-      </ul>
-    </li>
-  </ul>
-
-</nav>
-<div class="row">
-  <div id="overlayError" class="small-10 columns small-centered alert-box alert" data-alert="" style="display: none;">
-    <div class="textHere"><strong>Error</strong> goes here</div>
-    <!-- <a href="#" class="close">&times;</a> -->
-  </div>
-
-  <div id="loadingScreen" class="small-10 columns small-centered alert-box" style="display: none;">
-    Loading<span class="dot_area">.4</span>
-  </div>
-</div>
-<div class="table_holder">
-  <div class="main_table" style="width: 903.5px;">
-    <div class="main_row">
-
-      <div id="view_fake" class="block_holder" style="width: 521.5px;">
-        <div class="block">
+        <div id="view_fake" class="block_holder" >
+          <div class="block">
+          </div>
         </div>
-      </div>
 
-
-      <div id="view_create" class="block_holder hide panel2">
-        <div class="block">
-          <div class="header">
-            <a class="close_button left" href="#inbox"><i class="bats-close"></i></a>
+        <div id="view_create" class="block_holder panel2">
+          <div class="block">
+            <div class="header">
+              <a (click)="routeTo('Teeups')"class="close_button left" ><i class="bats-close"></i></a>
             <span class="headerTitle">
                 Create TeeUp
             </span>
-          </div>
-
-          <div class="block_content">
-            <div class="section" style="padding: 10px;">
-              <div class="select2-container select2-container-multi fullwidth tofield" id="s2id_autogen5" style="width: 100%;">    <ul class="select2-choices">  <li class="select2-search-field">    <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input select2-default" id="s2id_autogen6" style="width: 110%;">  </li></ul><div class="select2-drop select2-drop-multi select2-display-none">   <ul class="select2-results">   <li class="select2-no-results">No matches found</li></ul></div></div><select class="fullwidth tofield select2-offscreen" data-placeholder="To:" multiple="multiple" tabindex="-1">
-
-              <option>larry@coo-e.com</option>
-
-              <option>qberticus@gmail.com</option>
-
-              <option>christopher.bras@gmail.com</option>
-
-              <option>bill@coo-e.com</option>
-
-              <option>kcbrandi@gmail.com</option>
-
-              <option>gadjonesq@gmail.com</option>
-
-              <option>rafaelozjones@gmail.com</option>
-
-              <option>rjm24@njit.edu</option>
-
-              <option>steve.ricken@gmail.com</option>
-
-              <option>sr82@njit.edu</option>
-
-              <option>va58@njit.edu</option>
-
-              <option>arg34@njit.edu</option>
-
-              <option>Nalywayko92@gmail.com</option>
-
-              <option>xxxxxx@awfasd.com</option>
-
-              <option>krishna@gmail.com</option>
-
-              <option>cmarkson@mac.com</option>
-
-              <option>tz@coo-e.com</option>
-
-              <option>kaboukka@hotmail.com</option>
-
-              <option>admin@coo-e.com</option>
-
-              <option>natetest@coo-e.com</option>
-
-              <option>litaplaahsiv@gmail.com</option>
-
-              <option>bushra@coo-e.com</option>
-
-              <option>charl@coo-e.com</option>
-
-              <option>natelaws@gmail.com</option>
-
-              <option>khalilb16@live.com</option>
-
-              <option>nate@coo-e.com</option>
-
-              <option>dave@coo-e.com</option>
-
-              <option>avo3@njit.edu</option>
-
-              <option>julia.marlene.mayer@gmail.com</option>
-
-              <option>r.bradthele@gmail.com</option>
-
-            </select>
-              <input type="text" class="fullwidth titlefield" placeholder="Title:" style="margin-top: 4px;">
-            </div>
-            <div class="section" style="padding: 10px;">
-              <textarea rows="4" class="fullwidth" placeholder="Group Invitiation Message: (Optional)" disabled="disabled"></textarea>
-              <input type="text" class="fullwidth whenfield" placeholder="Suggest When: (Optional)">
-              <input type="text" class="fullwidth wherefield" placeholder="Suggest Where: (Optional)">
             </div>
 
-            <ul class="button-group even-2">
-              <li><a href="#inbox" class="button secondary cancel">Discard</a></li>
-              <li style="margin: 0;"><a href="#" class="button btn-primary send disabled">Send</a></li>
-            </ul>
+            <div class="block_content">
+              <div class="section" style="padding: 10px;">
+                <div class="select2-container select2-container-multi fullwidth tofield" id="s2id_autogen5" style="width: 100%;">
+                  <ul class="select2-choices">
+                    <li class="select2-search-field">
+                      <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input select2-default" id="s2id_autogen6" style="width: 110%;">
+                    </li>
+                  </ul>
+                  <div class="select2-drop select2-drop-multi select2-display-none">
+                  <ul class="select2-results">
+                    <li class="select2-no-results">No matches found</li>
+                    <li class="select2-no-results">No matches found</li>
+                  </ul>
+                  </div>
+                </div>
+                <select class="fullwidth tofield select2-offscreen" data-placeholder="To:" multiple="multiple" tabindex="-1">
+                <option>larry@coo-e.com</option>
+
+                <!--<option>qberticus@gmail.com</option>-->
+
+                <!--<option>christopher.bras@gmail.com</option>-->
+
+                <!--<option>bill@coo-e.com</option>-->
+
+                <!--<option>kcbrandi@gmail.com</option>-->
+
+                <!--<option>gadjonesq@gmail.com</option>-->
+
+                <!--<option>rafaelozjones@gmail.com</option>-->
+
+                <!--<option>rjm24@njit.edu</option>-->
+
+                <!--<option>steve.ricken@gmail.com</option>-->
+
+                <!--<option>sr82@njit.edu</option>-->
+
+                <!--<option>va58@njit.edu</option>-->
+
+                <!--<option>arg34@njit.edu</option>-->
+
+                <!--<option>Nalywayko92@gmail.com</option>-->
+
+                <!--<option>xxxxxx@awfasd.com</option>-->
+
+                <!--<option>krishna@gmail.com</option>-->
+
+                <!--<option>cmarkson@mac.com</option>-->
+
+                <!--<option>tz@coo-e.com</option>-->
+
+                <!--<option>kaboukka@hotmail.com</option>-->
+
+                <!--<option>admin@coo-e.com</option>-->
+
+                <!--<option>natetest@coo-e.com</option>-->
+
+                <!--<option>litaplaahsiv@gmail.com</option>-->
+
+                <!--<option>bushra@coo-e.com</option>-->
+
+                <!--<option>charl@coo-e.com</option>-->
+
+                <!--<option>natelaws@gmail.com</option>-->
+
+                <!--<option>khalilb16@live.com</option>-->
+
+                <!--<option>nate@coo-e.com</option>-->
+
+                <!--<option>dave@coo-e.com</option>-->
+
+                <!--<option>avo3@njit.edu</option>-->
+
+                <!--<option>julia.marlene.mayer@gmail.com</option>-->
+
+                <!--<option>r.bradthele@gmail.com</option>-->
+
+              </select>
+                <input type="text" class="fullwidth titlefield" placeholder="Title:" style="margin-top: 4px;">
+              </div>
+              <div class="section" style="padding: 10px;">
+                <textarea rows="4" class="fullwidth" placeholder="Group Invitiation Message: (Optional)" disabled="disabled"></textarea>
+                <input type="text" class="fullwidth whenfield" placeholder="Suggest When: (Optional)">
+                <input type="text" class="fullwidth wherefield" placeholder="Suggest Where: (Optional)">
+              </div>
+
+              <ul class="button-group even-2">
+                <li><a href="#inbox" class="button secondary cancel">Discard</a></li>
+                <li style="margin: 0;"><a href="#" class="button btn-primary send disabled">Send</a></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div id="visiblelogs" class="block_holde hide">
-        <div class="block pickerbox">
-          <div class="section">
-            <div class="sectionTitle clearfix">
-              <div class="text">Timer Logs</div>
-            </div>
-            <div id="silly_logs" style="padding:10px;">
-              <div>jabber attach took:  3252 ms</div><div>bulk update took:  1147 ms</div><div>rendering inbox took:  10 ms</div></div>
-          </div>
-        </div>
-      </div>
 
-    </div> <!-- /main row -->
+      </div> <!-- /main row -->
+    </div>
   </div>
-</div>
-

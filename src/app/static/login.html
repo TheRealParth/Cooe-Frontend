@@ -30,25 +30,28 @@
           </md-input>
             </div>
         </div>
+        <div (click)="routeTo('Forgot')" class="button-container">
+          <a >Forgot?</a>
+          <a (click)="routeTo('Signup')" >Sign Up</a>
+        </div>
+
+
+        <div class="button-container-login">
         <button md-raised-button class="login-button" color="primary">Login</button>
+          </div>
 
 
 
 
-      <div class="control-group">
-        <div class="controls">
 
-          <br/><br/><br/>
-
+        <div class="button-container-social">
           <a class="button secondary" rel="nofollow" href="/login/twitter/">Twitter</a>
 
           <a class="button secondary" rel="nofollow" href="/login/facebook/">Facebook</a>
 
           <a class="button secondary" rel="nofollow" href="/login/google-oauth2/">Google-Oauth2</a>
-
-
         </div>
-      </div>
+
     </md-card>
       </form>
 

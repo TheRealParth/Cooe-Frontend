@@ -1,4 +1,3 @@
-
 <div class="table_holder">
   <div class="main_table">
     <div class="main_row">
@@ -15,7 +14,7 @@
             <span class="headerTitle">
                 My TeeUps:
             </span>
-            <a id="create_button"  class="header_button right" href="./#/create" title="Create Teeup"><i class="bats-add"></i></a>
+            <a id="create_button"  class="header_button right" (click)="routeTo('CreateTeeup')" title="Create Teeup"><i class="bats-add"></i></a>
           </div>
 
           <div class="block_content">
@@ -58,17 +57,7 @@
         </div>
       </div>
 
-      <div id="visiblelogs" class="block_holde hide">
-        <div class="block pickerbox">
-          <div class="section">
-            <div class="sectionTitle clearfix">
-              <div class="text">Timer Logs</div>
-            </div>
-            <div id="silly_logs" style="padding:10px;">
-              <div>jabber attach took:  3252 ms</div><div>bulk update took:  1147 ms</div><div>rendering inbox took:  10 ms</div></div>
-          </div>
-        </div>
-      </div>
+
 
     </div> <!-- /main row -->
   </div>

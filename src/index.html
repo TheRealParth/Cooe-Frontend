@@ -116,56 +116,10 @@
 <script src="https://cdn.auth0.com/js/lock-9.1.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <!-- <script>window.jQuery || document.write('<script src="/media/js/libs/jquery-1.7.2.min.js"><\/script>')</script> -->
-<script src="/src/assets/js/foundation.min.js"></script>
 <script type="text/javascript">
-
-  $(function() {
-
-    var top = $("#topbar");
-    var overlay = $("#menu-overlay");
-
-    top.on('click','.dd-btn', function(){
-      var dd = $(this).next();
-      if(dd.is('.open')) {
-        dd.removeClass('open')
-        overlay.hide();
-      }
-      else {
-        dd.addClass('open');
-        overlay.show();
-      }
-
-    });
-
-    overlay.on('click', function(e){
-      top.find('.dropdown').removeClass('open');
-      overlay.hide();
-      return false;
-    });
-
-  });
 </script>
 
-<script type="text/javascript">
-  $(function(){
-    $("#open-close-btn").click(function(){
-      $('.control-menu').toggle();
-      $("#contact-form").hide();
-      $(this).toggleClass("bats-closed bats-opened");
-    });
 
-    $(".control-menu .control-btn").mouseover(function(){
-      $(".control-text").text($(this).data("txt"));
-    });
-
-    $(".contact-btn").click(function(){
-      $("#contact-form").toggle();
-    });
-
-  });
-
-
-</script>
 
 
 <!-- Setting the right viewport -->

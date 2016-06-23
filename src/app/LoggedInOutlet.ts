@@ -18,16 +18,22 @@ export class LoggedInRouterOutlet extends RouterOutlet {
     this.publicRoutes = {
       'login': true,
       'signup': true,
+      'forgot' : true,
+      'home' : true,
+      //to be removed from publics
+      'teeups': true,
+      'teeup' : true,
+      'create-teeup' : true,
     };
   }
 
   activate(instruction: ComponentInstruction) {
     let url = instruction.urlPath;
     console.log(url);
-    // if (!this.publicRoutes[url] && !localStorage.getItem('jwt')) {
-    //   // todo: redirect to Login, may be there a better way?
-    //   this.parentRouter.navigateByUrl('/login');
-    // }
+    if (!this.publicRoutes[url] && !localStorage.getItem('jwt')) {
+      // todo: redirect to Login, may be there a better way?
+      this.parentRouter.navigateByUrl('/login');
+    }
     return super.activate(instruction);
   }
 }
