@@ -98,7 +98,6 @@
   font-style: normal;
 }
 
-
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 /* line 13, ../sass/_bats.scss */
 [data-icon]:before {
@@ -523,7 +522,6 @@ body {
 
 /* line 272, ../sass/foundation/components/_global.scss */
 body {
-  background: white;
   color: #222222;
   padding: 0;
   margin: 0;
@@ -5459,9 +5457,6 @@ table tfoot tr td {
 .has-tip.tip-left, .has-tip.tip-right {
   float: none !important;
 }
-.has-dropdown {
-  margin-right: 15px;
-}
 
 /* line 45, ../sass/foundation/components/_tooltips.scss */
 .tooltip {
@@ -5668,7 +5663,7 @@ table tfoot tr td {
 
 /* line 3, ../sass/_sprites.scss */
 .convo_sprite {
-  background-image: url("../img/convo_sprites.1f247e309069.png");
+  background-image: url("../assets/img/convo_sprites.1f247e309069.png");
   background-repeat: no-repeat;
   height: 22px;
   width: 22px;
@@ -5798,9 +5793,6 @@ html, body {
 }
 
 /* line 32, ../sass/style.scss */
-body {
-  background: #797473;
-}
 
 /* line 37, ../sass/style.scss */
 .table_holder {
@@ -6699,7 +6691,7 @@ body {
   width: 50px;
   background: #D9D3C6;
   margin: 0 auto;
-  background-image: url("../img/avatar.b0edc75086b3.png");
+  background-image: url("../img/img/avatar.b0edc75086b3.png");
   background-repeat: no-repeat;
   background-position: center;
   -moz-background-size: 50px 50px;
@@ -6897,7 +6889,7 @@ body {
   padding-bottom: 0px;
   font-size: 15px;
   font-family: AsapRegular !important;
-  background-image: url("../img/like_thumbs.44085029d85a.png");
+  background-image: url("../assets/img/like_thumbs.44085029d85a.png");
   background-position-x: 4px;
   background-position-y: 2px;
   background-repeat: no-repeat;
@@ -7475,6 +7467,7 @@ img.grayscale {
   border: inset 5px;
   border-top-style: solid;
   margin-top: -2.5px;
+  margin-right: 15px;
   position: absolute;
   top: 25px;
   right: 0;
@@ -7616,3 +7609,26 @@ img.grayscale {
     margin: 0;
   }
 }
+body {
+  background-color: #797473;
+}
+#inbox_sections_container {
+  height: 80%;
+}
+.progress-circle-container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.progress-circle-container md-progress-circle {
+  border-color: #000000;
+  margin:auto;
+  height: 50px;
+  width: 50px;
+}
+.progress-circle-container md-progress-circle svg path {
+  stroke: #bcd74d !important;
+}
+
+

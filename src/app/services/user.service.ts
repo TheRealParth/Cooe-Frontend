@@ -10,14 +10,14 @@ export class UserService {
     this.loggedIn = !!localStorage.getItem('auth_token');
   }
 
-  login(email, password) {
+  login(username, password) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
     return this.http
       .post(
         '/login',
-        JSON.stringify({ email, password }),
+        JSON.stringify({ username, password }),
         { headers }
       )
       .map(res => res.json())
@@ -37,6 +37,7 @@ export class UserService {
   }
 
   isLoggedIn() {
-    return this.loggedIn;
+    return true;
+    // return this.loggedIn;
   }
 }

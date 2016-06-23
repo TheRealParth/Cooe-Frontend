@@ -1,18 +1,18 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
-import { Http, Headers } from '@angular/http';
+import { Http } from '@angular/http';
 import { Router } from '@angular/router-deprecated';
 import { AuthHttp, JwtHelper} from 'angular2-jwt';
 
-let styles = require('../static/home.css');
 let template = require('../static/home.html');
+let style = require('../static/css/home.css');
 
 
 @Component({
   selector: 'home',
   directives: [CORE_DIRECTIVES],
   template: template,
-  styles: [styles]
+  styles: [style]
 })
 export class HomeComponent {
   jwt: string;
@@ -20,7 +20,7 @@ export class HomeComponent {
   response: string;
   api: string;
   jwtHelper: JwtHelper = new JwtHelper();
-  constructor(public router: Router, public http: Http, public authHttp: AuthHttp, @Inject(Window) window: Window) {
+  constructor(public router: Router, public http: Http, public authHttp: AuthHttp) {
 
     this.jwt = localStorage.getItem('jwt');
     this.decodedJwt = this.jwt && this.jwtHelper.decodeToken(this.jwt);

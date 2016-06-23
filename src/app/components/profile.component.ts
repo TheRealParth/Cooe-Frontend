@@ -4,14 +4,12 @@ import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 import { Http, Headers } from '@angular/http';
 import { contentHeaders } from '../common/headers';
 
-let styles   = require('../static/login.css');
 let template = require('../static/login.html');
 
 @Component({
   selector: 'profile',
   directives: [ CORE_DIRECTIVES, FORM_DIRECTIVES ],
   template: template,
-  styles: [ styles ]
 })
 export class ProfileComponent {
   constructor(public router: Router, public http: Http) {

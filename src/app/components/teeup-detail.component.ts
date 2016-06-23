@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {RouterLink, Route, RouteParams} from '@angular/router-deprecated';
-import {Routes, RouteSegment} from '@angular/router';
+import {RouterLink, Router, RouteParams} from '@angular/router-deprecated';
 import {TeeupService} from '../services/teeup.service.ts';
 import {TeeupDetails} from '../services/teeup-details.ts';
+import {NavbarComponent} from './navbar.component';
 
 let template = require('../static/teeupdetail.html');
-let styles = require('../static/postlogin.css');
+let styles = require('../../assets/css/main.css');
 @Component({
     selector: 'teeups',
     providers: [TeeupService],
@@ -14,8 +14,8 @@ let styles = require('../static/postlogin.css');
     styles: [styles]
 })
 
-export class TeeupDetailComponent {
-    id: number;
+export class TeeupDetailComponent implements OnInit {
+    id: number = -1;
     //name default values
     tud: TeeupDetails = {
       id: 0,
@@ -44,14 +44,24 @@ export class TeeupDetailComponent {
     };
 
     teeupService: TeeupService;
-    constructor(teeupService: TeeupService,  private routeParams: RouteParams){
+
+    constructor(teeupService: TeeupService, private router: Router, private routeParams: RouteParams){
       this.teeupService = teeupService;
-      this.id = routeParams.get['id'];
+      this.id = parseInt(routeParams.params['id']);
     }
     getTeeupDetails(){
         this.teeupService.getTeeupById(this.id).then(teeupDetails => this.tud = teeupDetails);
     }
     ngOnInit(){
-      this.getTeeupDetails();
+      if(this.id > -1){
+        this.getTeeupDetails();
+        console.dir(this.id);
+      }
+      else{
+        console.dir("else: ", this.id);
+        this.router.parent.navigate(['./Teeups'])
+      }
+
     }
+
 }

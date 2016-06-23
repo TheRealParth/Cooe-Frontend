@@ -1,0 +1,113 @@
+<nav *ngIf="isLoggedIn" id="topbar">
+
+  <ul class="left title-area">
+
+    <li class="has-dropdown"><a class="dd-btn"><img src="/assets/img/logo.png"></a>
+      <ul class="dropdown cooelink">
+        <li>
+          <a href="./#/teeups/">
+            <div class="bats-logo"></div>
+            <span>My TeeUps</span>
+          </a>
+        </li>
+        <li>
+          <a href="/#/createteeup/">
+            <div class="bats-add"></div>
+            <span>Create TeeUps</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-user"></div>
+            <span>My Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-contacts"></div>
+            <span>Contacts</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-calendar"></div>
+            <span>Calendar</span>
+          </a>
+        </li>
+        <li>
+          <a href="/settings/">
+            <div class="bats-settings"></div>
+            <span>Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-send-msg"></div>
+            <span>Send Feedback</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="bats-tour"></div>
+            <span>Tour</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+
+
+  <ul class="left">
+
+
+
+
+  </ul>
+
+  <ul class="right">
+    <li class="has-dropdown">
+      <a class="dd-btn">
+        <img class="rounded" src="/assets/img/avatar.png" title="dougzytko@gmail.com" style="width:30px; height: 30px;">
+        <span class="usernametxt"><!--<span id="myjidhere"></span>--> doug</span>
+      </a>
+      <ul class="dropdown">
+        <li><a href="/invite/email/">Invite Friends</a></li>
+        <li><a href="/settings/">Settings</a></li>
+        <li class="dividerx"></li>
+        <li><a href="/logout/">Logout</a></li>
+      </ul>
+    </li>
+  </ul>
+
+</nav>
+<div *ngIf="!isLoggedIn" id='top-row' class="row">
+  <div class="control-bar">
+    <div id="open-close-btn" class="control-btn bats-closed"></div>
+    <div class="control-menu" style="display: none;">
+      <a href="/" class="control-btn home-btn bats-logo" data-txt="Home"></a>
+      <a href="/about/" class="control-btn about-btn bats-tour" data-txt="About"></a>
+      <a class="control-btn contact-btn bats-invited" data-txt="Contact" ></a>
+      <div class="control-text hide-for-small">Home</div>
+    </div>
+  </div>
+  <div id="contact-form" class="dropdown-box">
+    <strong>Let us know what's on your mind:</strong>
+    <input type="text" placeholder="Your name">
+    <input type="text" placeholder="Your email">
+    <textarea placeholder="Your thoughts"></textarea>
+    <input type="submit" class="btn-submit" value="Submit">
+  </div>
+  <div id="login-form" class="dropdown-box">
+    <strong>Username:</strong>
+    <input type="text">
+    <strong>Password:</strong>
+    <input type="text">
+    <input type="submit" class="btn-submit" value="Submit">
+  </div>
+
+
+  <div class="signin-bar">
+    <a href="/login" class="signin-button">Beta Sign-In</a>
+  </div>
+</div>

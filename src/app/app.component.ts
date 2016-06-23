@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import { RouteConfig, Router} from '@angular/router-deprecated';
+import {Component, Query, QueryList, ElementRef} from '@angular/core';
+import { RouteConfig, Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {LoggedInRouterOutlet} from './LoggedInOutlet';
 import {HomeComponent} from './components/home.component';
 import {LoginComponent} from './components/login.component';
@@ -10,18 +10,27 @@ import { MD_INPUT_DIRECTIVES, MdInput } from '@angular2-material/input';
 
 import { MdProgressCircle, MdSpinner } from '@angular2-material/progress-circle';
 import {TeeupDetailComponent} from "./components/teeup-detail.component";
+import {NavbarComponent} from "./components/navbar.component";
+import {ProgressCircle} from "./components/UI/progress-circle";
 // import {Signup} from './components/signup.component';
 
 @Component({
   // HTML selector for this component
   selector: 'app',
   template: `
-<!--<md-progress-circle mode="indeterminate" color="primary" *ngIf="isLoading"></md-progress-circle>-->
-   
+<!-- add || router.isRouteActive(router.generate(['Signup'])) below -->
+   <navbar></navbar>
+   <div class="row">
+  <div id="overlayError" class="small-10 columns small-centered alert-box alert" data-alert="" style="display: none;">
+    <div class="textHere"><strong>Error</strong> goes here</div>
+    <!-- <a href="#" class="close">&times;</a> -->
+  </div>
+</div>
       <router-awesome> 
+      
 </router-awesome>
   `,
-  directives: [LoggedInRouterOutlet, MD_INPUT_DIRECTIVES]
+  directives: [LoggedInRouterOutlet, NavbarComponent, ProgressCircle, ROUTER_DIRECTIVES, MD_INPUT_DIRECTIVES]
 })
 
 @RouteConfig([
@@ -34,10 +43,16 @@ import {TeeupDetailComponent} from "./components/teeup-detail.component";
   // { path: '/signup', component: Signup, as: 'Signup' }
 ])
 
-export class AppComponent{
-  ngOnInit() {
+export class AppComponent {
+  isLoading: boolean = true;
+  els: QueryList<ElementRef>;
+  router: Router;
+  constructor(@Query('login', {descendants: false}) els:QueryList<ElementRef>, router: Router) {
+    this.els = els;
+    this.router = router;
   }
-  constructor() {
+  ngAfterContentInit(){
+    console.log("done");
+  }
 
-  }
 }

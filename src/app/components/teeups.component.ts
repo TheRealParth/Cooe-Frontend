@@ -2,26 +2,28 @@ import {Component} from '@angular/core';
 import {RouterLink} from '@angular/router-deprecated';
 import {TeeupService} from '../services/teeup.service.ts';
 import { Teeup } from '../services/teeup';
+import { ProgressCircle } from './UI/progress-circle';
 
-let styles = require('../static/postlogin.css');
+
 let template = require('../static/teeups.html');
+let style = require('../static/css/override.css');
 @Component({
 	selector: 'teeups',
+  styles: [style],
 	providers: [TeeupService],
-  styles: [styles],
 	template: template,
-  directives: [RouterLink],
+  directives: [RouterLink, ProgressCircle],
 })
 
 export class TeeupsComponent {
 	teeups: Teeup[] = [];
-  teeupCount: Number;
-	constructor(private teeupService: TeeupService){}
+	constructor(private teeupService: TeeupService){
+  }
 	getTeeups(){
 		this.teeupService.getTeeups().then(teeups => this.teeups = teeups);
 	}
 	ngOnInit() {
-		this.getTeeups();
+    this.getTeeups();
 	}
 
 }

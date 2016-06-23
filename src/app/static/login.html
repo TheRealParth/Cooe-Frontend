@@ -1,43 +1,10 @@
-<div id='top-row' class="row">
-  <div class="control-bar">
-    <div id="open-close-btn" class="control-btn bats-closed"></div>
-    <div class="control-menu" style="display: none;">
-      <a href="/" class="control-btn home-btn bats-logo" data-txt="Home"></a>
-      <a href="/about/" class="control-btn about-btn bats-tour" data-txt="About"></a>
-      <a href="#contact" class="control-btn contact-btn bats-invited" data-txt="Contact" ></a>
-      <div class="control-text hide-for-small">Home</div>
-    </div>
-  </div>
-
-  <div class="signin-bar">
-    <a href="/login" class="signin-button">Beta Sign-In</a>
-  </div>
-</div>
-
-<div id="contact-form" class="dropdown-box">
-  <strong>Let us know what's on your mind:</strong>
-  <input type="text" placeholder="Your name">
-  <input type="text" placeholder="Your email">
-  <textarea placeholder="Your thoughts"></textarea>
-  <input type="submit" class="btn-submit" value="Submit">
-</div>
-
-
-<div id="login-form" class="dropdown-box">
-  <strong>Username:</strong>
-  <input type="text">
-  <strong>Password:</strong>
-  <input type="text">
-  <input type="submit" class="btn-submit" value="Submit">
-</div>
-
 
 <div class="row" >
   <div class="homepanel small-6 small-centered columns">
 
 
 
-      <form (ngSubmit)="submitState(localState)" autocomplete="off" class="login-form">
+      <form (ngSubmit)="login()" autocomplete="off" class="login-form">
 
       <md-card class="login-card" >
         <h1>Login</h1>

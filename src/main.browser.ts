@@ -28,7 +28,6 @@ export function main(initialHmrState?: any): Promise<any> {
   return bootstrap(AppComponent, [
     FORM_PROVIDERS,
     ROUTER_PROVIDERS,
-    {provide: LocationStrategy, useClass: PathLocationStrategy},
     HTTP_PROVIDERS,
     PROVIDERS,
     ENV_PROVIDERS,

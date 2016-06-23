@@ -1,101 +1,9 @@
-<nav id="topbar">
 
-  <ul class="left title-area">
-
-    <li class="has-dropdown"><a class="dd-btn"><img src="/assets/img/logo.png"></a>
-      <ul class="dropdown cooelink">
-        <li>
-          <a href="/teeup/">
-            <div class="bats-logo"></div>
-            <span>My TeeUps</span>
-          </a>
-        </li>
-        <li>
-          <a href="/teeup/#create">
-            <div class="bats-add"></div>
-            <span>Create TeeUps</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-user"></div>
-            <span>My Profile</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-contacts"></div>
-            <span>Contacts</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-calendar"></div>
-            <span>Calendar</span>
-          </a>
-        </li>
-        <li>
-          <a href="/settings/">
-            <div class="bats-settings"></div>
-            <span>Settings</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-send-msg"></div>
-            <span>Send Feedback</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-tour"></div>
-            <span>Tour</span>
-          </a>
-        </li>
-      </ul>
-    </li>
-
-  </ul>
-
-
-  <ul class="left">
-
-
-
-
-  </ul>
-
-  <ul class="right">
-    <li class="has-dropdown">
-      <a class="dd-btn">
-        <img class="rounded" src="/assets/img/avatar.png" title="dougzytko@gmail.com" style="width:30px; height: 30px;">
-        <span class="usernametxt"><!--<span id="myjidhere"></span>--> doug</span>
-      </a>
-      <ul class="dropdown">
-        <li><a href="/invite/email/">Invite Friends</a></li>
-        <li><a href="/settings/">Settings</a></li>
-        <li class="dividerx"></li>
-        <li><a href="/logout/">Logout</a></li>
-      </ul>
-    </li>
-  </ul>
-
-</nav>
-<div class="row">
-  <div id="overlayError" class="small-10 columns small-centered alert-box alert" data-alert="" style="display: none;">
-    <div class="textHere"><strong>Error</strong> goes here</div>
-    <!-- <a href="#" class="close">&times;</a> -->
-  </div>
-
-  <div id="loadingScreen" class="small-10 columns small-centered alert-box" style="display: none;">
-    Loading<span class="dot_area">.4</span>
-  </div>
-</div>
 <div class="table_holder">
-  <div class="main_table" style="width: 903.5px;">
+  <div class="main_table">
     <div class="main_row">
 
-      <div id="view_fake" class="block_holder" style="width: 521.5px;">
+      <div id="view_fake" class="block_holder" >
         <div class="block">
         </div>
       </div>
@@ -107,7 +15,7 @@
             <span class="headerTitle">
                 My TeeUps:
             </span>
-            <a id="create_button"  class="header_button right" href="#create" title="Create Teeup"><i class="bats-add"></i></a>
+            <a id="create_button"  class="header_button right" href="./#/create" title="Create Teeup"><i class="bats-add"></i></a>
           </div>
 
           <div class="block_content">
@@ -116,6 +24,7 @@
             </div>
 
             <div id="inbox_sections_container">
+            <progress-circle *ngIf="!(teeups.length)"></progress-circle>
               <div *ngFor="let teeup of teeups" class="inbox_section" teeupid="25">
                 <a [routerLink]="['/Teeup', {id: teeup.id}]">
                   <div class="top clearfix">
