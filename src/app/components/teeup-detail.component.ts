@@ -2,15 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {RouterLink, Router, RouteParams} from '@angular/router-deprecated';
 import {TeeupService} from '../services/teeup.service.ts';
 import {TeeupDetails} from '../services/teeup-details.ts';
+import {MyStatus} from "./UI/my-status";
 
 let template = require('../static/teeupdetail.html');
-let styles = require('../../assets/css/main.css');
 @Component({
     selector: 'teeups',
     providers: [TeeupService],
     template: template,
-    directives: [RouterLink],
-    styles: [styles],
+    directives: [RouterLink, MyStatus],
 })
 
 export class TeeupDetailComponent implements OnInit {

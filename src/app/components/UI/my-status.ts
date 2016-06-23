@@ -1,10 +1,11 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'my-status',
-  template: `<li class="my_status">
+  template: `<div class="my_status" [class.off]="localState.disabled" (mouseleave)="mouseOutHandler()" >
                     <a class="status_button dropdown secondary small" (click)="toggleMyStatus()"  ><div class="bats bats-invited"></div><div class="text"> Invited</div></a>
-                    <ul id="my_status_dropdown open" (blur)="toggleMyStatus()" (click)="toggleMyStatus()"  *ngIf="localState.isMyStatusOpen" class="fx-dropdown" style="position: absolute; top: 80px; left: 182.5px;">
+                    <ul id="my_status_dropdown" (click)="toggleMyStatus()" 
+                     *ngIf="localState.isMyStatusOpen" class="fx-dropdown" style="position: absolute; top: 80px; left: 182.5px;">
                       <li><a data-state="maybe"><div class="bats bats-mightgo"></div><div class="text"> Might Go</div></a></li>
                       <li><a data-state="going"><div class="bats bats-going"></div><div class="text"> I'm Going</div></a></li>
                       <li><a data-state="interested"><div class="bats bats-interested"></div><div class="text"> Interested</div></a></li>
@@ -17,18 +18,30 @@ import {Component, Input} from '@angular/core';
                         <li style="display: none;"><a href="#" class="" data-state="invited"> Invited</a></li>
                        -->
                     </ul>
-                  </li>`
+                  </div>
+                  `
 })
 
-export class MyStatus {
-  @Input() selection: any;
+export class MyStatus implements OnInit {
+  @Input() public default: any;
+  @Input() disabled: boolean = false;
   localState = {
     isMyStatusOpen: false,
+    disabled: false,
+  };
+  constructor(){
+
   }
-  constructor(public selection: any){
-    this.selection = selection;
+  mouseOutHandler(){
+    if(this.localState.isMyStatusOpen)
+      this.localState.isMyStatusOpen = false;
+    console.log("hiiiii")
   }
   toggleMyStatus(){
-    this.localState.isMyStatusOpen != this.localState.isMyStatusOpen;
+    console.log(this.localState.isMyStatusOpen)
+    this.localState.isMyStatusOpen = !(this.localState.isMyStatusOpen);
+  }
+  ngOnInit(){
+    this.localState.disabled = this.disabled;
   }
 }
