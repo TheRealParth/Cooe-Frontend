@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import {Router} from '@angular/router-deprecated';
 import { Http, Headers } from '@angular/http';
 import {contentHeaders} from "../common/headers";
-let TEMP_URL = 'URL/basic-auth';
+let TEMP_URL = 'http://teeup.ddns.net:8080/cooe/profile/';
 @Injectable()
 export class UserService {
   private loggedIn = false;
@@ -44,6 +44,30 @@ export class UserService {
     //   });
   }
 
+  signup(username, password, firstName, lastName, email) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let body = JSON.stringify({
+      username,
+      password,
+      firstName,
+      lastName,
+      email
+    });
+    console.log(body.toString());
+    return this.http.post(TEMP_URL, body, { headers: contentHeaders })
+      .subscribe(
+        response => {
+          localStorage.setItem('jwt', response.json().id_token);
+          this.router.parent.navigateByUrl('/home');
+        },
+        error => {
+          alert(error.text());
+          console.log(error.text());
+        }
+      );
+
+  }
   logout() {
     localStorage.removeItem('auth_token');
     this.loggedIn = false;

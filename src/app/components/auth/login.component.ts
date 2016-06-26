@@ -28,7 +28,10 @@ export class LoginComponent {
   login() {
     var username = this.localState.username;
     var password = this.localState.password;
-    this.userService.login(username, password);
+    if(username != "" && password != "")
+      this.userService.login(username, password);
+    else
+      alert("Check your credentials and try again")
   }
 
   signup(event) {

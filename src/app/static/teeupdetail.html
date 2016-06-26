@@ -35,16 +35,8 @@
               <div class="title">{{tud.name}}</div>
               <div>
                 <ul class="button-group even-2">
-                  <li class="teeup_status off">
-                    <a class="status_button dropdown secondary small" data-dropdown="teeup_status_dropdown" href="#" data-state="planning"><div class="bats bats-planning"></div><div class="text"> Planning</div></a>
-
-                    <ul id="teeup_status_dropdown" class="fx-dropdown" data-dropdown-content="" style="position: absolute; top: 172px; left: -99999px;">
-                      <li style="display: none;"><a href="#" data-state="planning"><div class="bats bats-planning"></div><div class="text"> Planning</div></a></li>
-                      <li><a href="#" data-state="on"><div class="bats bats-on"></div><div class="text"> It's On</div></a></li>
-                      <li><a href="#" data-state="cancelled"><div class="bats bats-cancelled"></div><div class="text"> Cancelled</div></a></li>
-                      <li style="display: none;"><a href="#" data-state="happening">Happening</a></li>
-                      <li style="display: none;"><a href="#" data-state="ended">It's Ended</a></li>
-                    </ul>
+                  <li >
+                  <teeup-status [disabled]=true></teeup-status>
                   </li>
                   <li >
                   <my-status ></my-status>

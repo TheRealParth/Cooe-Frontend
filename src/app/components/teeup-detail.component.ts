@@ -3,18 +3,18 @@ import {RouterLink, Router, RouteParams} from '@angular/router-deprecated';
 import {TeeupService} from '../services/teeup.service.ts';
 import {TeeupDetails} from '../services/teeup-details.ts';
 import {MyStatus} from "./UI/my-status";
+import {TeeupStatus} from "./UI/teeup-status";
 
 let template = require('../static/teeupdetail.html');
 @Component({
     selector: 'teeups',
     providers: [TeeupService],
     template: template,
-    directives: [RouterLink, MyStatus],
+    directives: [RouterLink, MyStatus, TeeupStatus],
 })
 
 export class TeeupDetailComponent implements OnInit {
     id: number = -1;
-    //name default values
     tud: TeeupDetails;
     teeupService: TeeupService;
     localState = {
@@ -33,6 +33,7 @@ export class TeeupDetailComponent implements OnInit {
         this.router.parent.navigate(['./Teeups'])
       }
     }
+  
     toggleMyStatus(){
       this.localState.isMyStatusOpen = !(this.localState.isMyStatusOpen);
       console.log(this.localState.isMyStatusOpen);
