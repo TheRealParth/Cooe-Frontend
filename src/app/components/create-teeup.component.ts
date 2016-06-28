@@ -1,6 +1,7 @@
 import { MdProgressCircle } from '@angular2-material/progress-circle';
 import {Component} from '@angular/core';
 import { Router} from '@angular/router-deprecated';
+import {RouteUtilService} from "../services/route-util.service";
 
 let template = require('../static/createteeup.html');
 let style = require('../static/css/createteeup.css');
@@ -9,16 +10,13 @@ let style = require('../static/css/createteeup.css');
   template: template,
   styles: [style],
   directives: [MdProgressCircle],
+  providers: [RouteUtilService]
 })
 export class CreateTeeupComponent {
   router: Router;
 
- constructor(private rtr: Router){
+ constructor(private routeUtilService: RouteUtilService, private rtr: Router){
    this.router = rtr;
+   this.routeUtilService = routeUtilService;
  }
-
-  routeTo(route: string){
-    var newRoute = ['./' + route];
-    this.router.parent.navigateByInstruction(this.router.parent.generate(newRoute));
-  }
 }
