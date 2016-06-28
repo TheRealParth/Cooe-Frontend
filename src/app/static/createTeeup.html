@@ -25,10 +25,14 @@
                       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" placeholder="To:" class="select2-input select2-default" id="s2id_autogen6" style="width: 110%;">
                     </li>
                   </ul>
-                  <div class="select2-drop select2-drop-multi select2-display-none select2-drop-active" style="display: block;">
+                  <div class="select2-drop select2-drop-multi select2-drop-active" [class.select2-display-none] = "false" >
                   <ul class="select2-results">
                     <li class="select2-no-results">No matches found</li>
-                    <li class="select2-no-results">No matches found</li>
+                    <li class="select2-results-dept-0 select2-result select2-result-selectable select2-highlighted">
+                      <div class="select2-result-label">
+                      <span class="select2-match"></span>
+                        larry@coo-e.com</div>
+                    </li>
                   </ul>
                   </div>
                 </div>
@@ -103,8 +107,12 @@
               </div>
 
               <ul class="button-group even-2">
-                <li><a href="#inbox" class="button secondary cancel">Discard</a></li>
-                <li style="margin: 0;"><a href="#" class="button btn-primary send disabled">Send</a></li>
+                <li>
+                  <a href="/#/teeups" class="button secondary cancel">Discard</a>
+                </li>
+                <li style="margin: 0;">
+                  <a href="#" class="button btn-primary send disabled">Send</a>
+                </li>
               </ul>
             </div>
           </div>

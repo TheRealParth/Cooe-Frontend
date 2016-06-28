@@ -212,7 +212,7 @@ you can use the generic selector below, but it's slower:
 
 /* line 89, ../sass/_bats.scss */
 .bats-ended:before {
-  content: "\e010";
+  content: "\e010"
 }
 
 /* line 92, ../sass/_bats.scss */
