@@ -7823,3 +7823,67 @@ md-input {
 .control-group-next > .control {
   width:50%
 }
+.modal {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(0,0,0,.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.modal .vertical {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.modal .vertical .dialogue {
+  width: 350px;
+  height: 225px;
+  background-color: white;
+  margin-bottom: 100px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 3px #333333;
+}
+
+.modal .vertical .dialogue .message {
+  padding: 5%;
+  height: 50%;
+  margin-top: 20px;
+}
+.modal .vertical .dialogue .buttons{
+  display: flex;
+  margin-top: -5%;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.modal .vertical .dialogue .buttons .ok-button{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.modal .vertical .dialogue .buttons .cancel-button{
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color:
+}
+
+.modal .vertical .dialogue .message .error {
+  text-align: center;
+  margin-top: -5%;
+  margin-bottom: 2%;
+  color: red;
+  font-size: 12px;
+}
+.login-error {
+  text-align: center;
+  margin-top: -5%;
+  margin-bottom: 2%;
+  color: red;
+  font-size: 12px;
+}

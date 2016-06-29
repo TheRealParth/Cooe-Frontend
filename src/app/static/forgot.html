@@ -2,57 +2,35 @@
 <div class="row" >
   <div class="homepanel small-6 small-centered columns">
 
-    <h1>Forgot</h1>
-    <!--<form (ngSubmit)="login()" autocomplete="off" class="login-form">-->
+    <form (ngSubmit)="forgot()" autocomplete="off" class="login-form">
 
-      <!--<md-card class="login-card" >-->
-        <!--<h1>Login</h1>-->
-        <!--<div class="control-group">-->
-          <!--<div class="control">-->
-            <!--<md-input-->
-              <!--class="login-input"-->
-              <!--placeholder="Username"-->
-              <!--[value]="localState.username"-->
-              <!--(input)="localState.username = $event.target.value"-->
-            <!--&gt;-->
-            <!--</md-input>-->
-          <!--</div>-->
+      <md-card class="login-card" >
+        <h1>Forgot</h1>
+        <div class="login-error">{{localState.error}}</div>
+        <div class="control-group">
 
-          <!--<div class="control">-->
-            <!--<md-input-->
-              <!--class="login-input"-->
-              <!--placeholder="Password"-->
-              <!--type="password"-->
-              <!--[value]="localState.password"-->
-              <!--(input)="localState.password = $event.target.value"-->
-            <!--&gt;-->
-            <!--</md-input>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="button-container">-->
-          <!--<a >Forgot?</a>-->
-          <!--<a (click)="getSignup()" >Sign Up</a>-->
-        <!--</div>-->
+          <div class="control">
+            <md-input
+              class="login-input"
+              placeholder="Email"
+              type="email"
+              [value]="localState.email"
+              (input)="localState.email = $event.target.value"
+            >
+            </md-input>
+          </div>
+        </div>
+        <div class="button-container">
+          <a (click)="routeUtilService.routeTo('Login')" >Back to Log in</a>
+        </div>
 
 
-        <!--<div class="button-container-login">-->
-          <!--<button md-raised-button class="login-button" color="primary">Login</button>-->
-        <!--</div>-->
+        <div class="button-container-login">
+          <button md-raised-button class="login-button" [disabled]="localState.isRecovering"color="primary">Recover</button>
+        </div>
 
-
-
-
-
-        <!--<div class="button-container-social">-->
-          <!--<a class="button secondary" rel="nofollow" href="/login/twitter/">Twitter</a>-->
-
-          <!--<a class="button secondary" rel="nofollow" href="/login/facebook/">Facebook</a>-->
-
-          <!--<a class="button secondary" rel="nofollow" href="/login/google-oauth2/">Google-Oauth2</a>-->
-        <!--</div>-->
-
-      <!--</md-card>-->
-    <!--</form>-->
+      </md-card>
+    </form>
 
   </div>
 </div>

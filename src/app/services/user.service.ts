@@ -1,76 +1,48 @@
 // user.service.ts
 import { Injectable } from '@angular/core';
-import {Router} from '@angular/router-deprecated';
-import { Http, Headers, Response } from '@angular/http';
-import {contentHeaders} from "../common/headers";
-let TEMP_URL = '//people.such.works:8080/cooe/profile/validateCredential/';
+import { Http, Headers } from '@angular/http';
+
+let TEMP_URL = '//people.such.works:8080';
+let LOGIN_URL = TEMP_URL + '/cooe/profile/validateCredential/';
+
 @Injectable()
 export class UserService {
   private loggedIn = false;
   headers = new Headers();
-  constructor(private router: Router, private http: Http) {
+
+  constructor( private http: Http) {
     this.loggedIn = !!localStorage.getItem('auth_token');
     this.headers.append('Content-Type', 'application/json');
   }
 
   login(username, password) {
-
-    return this.http.post(TEMP_URL, JSON.stringify({ "userName": username, "password": password }), { headers: this.headers })
-      .subscribe(
-        response => {
-          localStorage.setItem('jwt', response.json().id_token);
-          this.router.parent.navigateByUrl('/home');
-        },
-        error => {
-          var e = JSON.parse(error.text());
-          switch(e.code){
-            //add code for invalid credentials
-            case("COOE_011"):
-              alert(e.code + '\n' + e.message);
-              break;
-            //add code for Email not validated
-            case("COOE_010"):
-              alert(e.code + '\n' + e.message);
-              break;
-            default:
-              alert(e.code);
-          }
-
-          console.log(error);
-        }
-      );
+   return this.http.post(LOGIN_URL, JSON.stringify({ "userName": username, "password": password }), { headers: this.headers })
+      .map((data: any) => data.json());
   }
-  validate(token){
 
+  validate(username, code){
+    return this.http.put(TEMP_URL + '/cooe/profile/' + username + '/validate/', JSON.stringify({
+      "validationCode": code,
+      "validationType": "EMAIL"
+    }), { headers: this.headers })
+      .map((data: any) => data.json());
   }
-  signup(username, password, firstName, lastName, email) {
-    let headers = new Headers();
-    headers.append('Content-Type', 'text/plain');
-    let body = JSON.stringify({
-      username,
-      password,
-      firstName,
-      lastName,
-      email
-    });
-    console.log(body.toString());
-    return this.http.post(TEMP_URL, body, { headers: contentHeaders })
-      .subscribe(
-        response => {
-          localStorage.setItem('jwt', response.json().id_token);
-          this.router.parent.navigateByUrl('/home');
-        },
-        error => {
-          alert(error.text());
-          console.log(error.text());
-        }
-      );
 
+  signup(userInfo) {
+    return this.http.post(TEMP_URL + '/cooe/profile/', userInfo, { headers: this.headers })
+      .map((data: any) => data.json())
   }
+
+  forgot(email) {
+    return this.http.get(TEMP_URL + '/cooe/profile/' + email + '/forgotPassword/EMAIL', { headers: this.headers })
+      .map((data: any) => data.json())
+  }
+
   logout() {
     localStorage.removeItem('auth_token');
     this.loggedIn = false;
   }
+
 
   isLoggedIn() {
     return this.loggedIn;

@@ -72,24 +72,7 @@
       </g>
       </svg>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/plugins/CSSPlugin.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/easing/EasePack.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenLite.min.js"></script>
-      <script>
 
-        window.onload = function() {
-          var logoSvg = $("#logo-svg");
-          var logo = $(".logo");
-          CSSPlugin.defaultSmoothOrigin = true;
-          doTween2();
-        function doTween1() {
-          TweenLite.to(logoSvg, .4, {height: "115px", width: "115px", opacity: 1, ease: Linear.ease,  transformOrigin: "50% 50%", onComplete:doTween2});
-        }
-        function doTween2() {
-          TweenLite.to(logoSvg, .4, {height: "100px", width: "100px", opacity: .2, ease: Linear.ease,   transformOrigin: "50% 50%", onComplete:doTween1});
-        }
-          }
-      </script>
 
     </div>
 </div>
@@ -116,9 +99,24 @@
 <script src="https://cdn.auth0.com/js/lock-9.1.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <!-- <script>window.jQuery || document.write('<script src="/media/js/libs/jquery-1.7.2.min.js"><\/script>')</script> -->
-<script type="text/javascript">
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/plugins/CSSPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/easing/EasePack.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenLite.min.js"></script>
+<script>
 
+  window.onload = function() {
+    var logoSvg = $("#logo-svg");
+    var logo = $(".logo");
+    CSSPlugin.defaultSmoothOrigin = true;
+    doTween2();
+    function doTween1() {
+      TweenLite.to(logoSvg, .4, {height: "115px", width: "115px", opacity: 1, ease: Linear.ease,  transformOrigin: "50% 50%", onComplete:doTween2});
+    }
+    function doTween2() {
+      TweenLite.to(logoSvg, .4, {height: "100px", width: "100px", opacity: .2, ease: Linear.ease,   transformOrigin: "50% 50%", onComplete:doTween1});
+    }
+  }
+</script>
 
 
 

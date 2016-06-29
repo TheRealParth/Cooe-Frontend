@@ -1,6 +1,7 @@
 import {Component, OnInit, HostListener} from '@angular/core';
 import {RouterLink, Router} from '@angular/router-deprecated';
 import { UserService } from '../services/user.service';
+import {AppState} from "../app.service";
 
 let template = require('../static/ui/navbar.html');
 @Component({
@@ -12,7 +13,6 @@ let template = require('../static/ui/navbar.html');
 
 export class NavbarComponent implements OnInit {
   localState = {
-    isLoggedIn: false,
     isDropDownOpen: false,
     isContactFormOpen: false,
     isLoginFormOpen: false,
@@ -20,9 +20,8 @@ export class NavbarComponent implements OnInit {
   };
 
   //name default values
-  constructor( private userService: UserService){
+  constructor( private userService: UserService, private appState: AppState){
     // this.isLoggedIn = userService.isLoggedIn();
-
   }
   setNavTitle(text: string){
     this.localState.navTitle = text;
@@ -39,7 +38,7 @@ export class NavbarComponent implements OnInit {
     this.localState.isLoginFormOpen = !(this.localState.isLoginFormOpen);
   }
   ngOnInit(){
-    console.log(this.localState.isLoggedIn);
+    console.log(this.appState.get().isLoggedIn);
   }
 
 }

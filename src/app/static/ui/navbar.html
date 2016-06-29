@@ -1,4 +1,4 @@
-<nav *ngIf="isLoggedIn" id="topbar">
+<nav *ngIf="appState.get().isLoggedIn" id="topbar">
 
   <ul class="left title-area">
 
@@ -77,7 +77,7 @@
   </ul>
 
 </nav>
-<div *ngIf="!isLoggedIn" id='top-row' class="row">
+<div *ngIf="!appState.get().isLoggedIn" id='top-row' class="row">
   <div class="control-bar">
     <div (click)="toggleDropDown()"  id="open-close-btn" [class.bats-opened]="localState.isDropDownOpen" [class.bats-closed]="!localState.isDropDownOpen"class="control-btn"></div>
     <div class="control-menu"  *ngIf="localState.isDropDownOpen">

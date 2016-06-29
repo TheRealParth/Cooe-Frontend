@@ -1,4 +1,4 @@
-import {Component, Query, QueryList, ElementRef} from '@angular/core';
+import {Component} from '@angular/core';
 import { RouteConfig, Router,  ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {LoggedInRouterOutlet} from './LoggedInOutlet';
 import {HomeComponent} from './components/home.component';
@@ -14,22 +14,23 @@ import {ProgressCircle} from "./components/UI/progress-circle";
 import {SignUpComponent} from "./components/auth/signup.component";
 import {ForgotComponent} from "./components/auth/forgot.component";
 import {CreateTeeupComponent} from "./components/create-teeup.component";
+import {ValidationModal} from "./components/UI/validation-modal";
+import {RouteUtilService} from "./services/route-util.service";
+import {AppState} from "./app.service";
 
 @Component({
   // HTML selector for this component
   selector: 'app',
   template: `
+   
+   <validation-modal *ngIf="appState.get().validating" ></validation-modal>
    <navbar></navbar>
-   <div class="row">
-  <div id="overlayError" class="small-10 columns small-centered alert-box alert" data-alert="" style="display: none;">
-    <div class="textHere"><strong>Error</strong> goes here</div>
-    <!-- <a href="#" class="close">&times;</a> -->
-  </div>
-</div>
+
       <router-awesome> 
       </router-awesome>
   `,
-  directives: [LoggedInRouterOutlet, NavbarComponent, ProgressCircle, ROUTER_DIRECTIVES, MD_INPUT_DIRECTIVES],
+  directives: [LoggedInRouterOutlet, ValidationModal, NavbarComponent, ProgressCircle, ROUTER_DIRECTIVES, MD_INPUT_DIRECTIVES],
+  providers: [RouteUtilService, AppState],
 })
 
 @RouteConfig([
@@ -45,15 +46,11 @@ import {CreateTeeupComponent} from "./components/create-teeup.component";
 ])
 
 export class AppComponent {
-  isLoading: boolean = true;
-  els: QueryList<ElementRef>;
   router: Router;
-  constructor(@Query('login', {descendants: false}) els:QueryList<ElementRef>, router: Router) {
-    this.els = els;
+  constructor( router: Router, private appState: AppState) {
     this.router = router;
-  }
-  ngAfterContentInit(){
-    console.log("done");
+    this.appState = appState;
+    this.appState.set('validating', false);
   }
 
 }

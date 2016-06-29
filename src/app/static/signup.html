@@ -4,6 +4,9 @@
 
       <md-card class="login-card" >
         <h1>Sign Up</h1>
+        <div class="login-error">
+          {{localState.error}}
+        </div>
         <div class="control-group-next">
           <div class="control">
             <md-input
@@ -66,10 +69,13 @@
             </md-input>
           </div>
         </div>
+        <div  class="button-container">
+          <a (click)="routeUtilService.routeTo('Login')" >Already Signed Up?</a>
+        </div>
 
 
         <div class="button-container-login">
-          <button md-raised-button class="login-button" color="primary">Sign Up</button>
+          <button md-raised-button class="login-button"  [disabled] = "localState.isSigningUp" color="primary">Sign Up</button>
         </div>
 
       </md-card>

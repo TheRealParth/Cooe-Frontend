@@ -7,7 +7,6 @@ export class AppState {
   @HmrState() _state = { };
 
   constructor() {
-
   }
 
   // already return a clone of the current state
