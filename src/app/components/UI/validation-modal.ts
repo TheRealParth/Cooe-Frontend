@@ -51,9 +51,12 @@ export class ValidationModal {
     this.userService = userService;
     this.routeUtilService = routeUtilService;
   }
+  //Basically used to close out of the validation dialogue
   validateLater(){
-    this.appState.set('validating', false);
+    this.appState.set('validating', false); //becomes true if network calls are being made (to disable button)
   }
+
+  //Sends the user entered validation code to API.
   sendCode(){
     this.localState.isValidating = true;
     console.log(this.localState.validationCode);
@@ -63,7 +66,7 @@ export class ValidationModal {
         // localStorage.setItem('jwt', data.json().id_token);
         // this.router.parent.navigateByUrl('/home');
         // return data;
-        this.appState.set('isLoggedIn', true);
+        this.appState.set('isLoggedIn', true); //TODO: Remove this and make the application use JWT for session checks
         this.appState.set('validating', false);
         this.routeUtilService.routeTo('teeups');
         console.log("DATA", data);
@@ -72,7 +75,7 @@ export class ValidationModal {
         var e = JSON.parse(error.text());
         this.localState.error= e.message;
         this.localState.isValidating = false;
-      });;
+      });
 
   }
 }

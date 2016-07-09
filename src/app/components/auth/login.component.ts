@@ -1,11 +1,11 @@
 import { Component} from '@angular/core';
-import { Router, RouterLink} from '@angular/router-deprecated';
+import { Router, RouterLink } from '@angular/router-deprecated';
 import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
-import {AppState} from "../../app.service.ts";
+import { AppState } from "../../app.service.ts";
 import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
 import { UserService } from '../../services/user.service.ts';
-import {SignUpComponent} from "./signup.component";
-import {RouteUtilService} from "../../services/route-util.service";
+import { SignUpComponent } from "./signup.component";
+import { RouteUtilService } from "../../services/route-util.service";
 
 let template = require('../../static/login.html');
 
@@ -25,6 +25,7 @@ export class LoginComponent {
     this.localState.isLoggingIn = false;
     this.appState = appState;
   }
+  //TODO: Test the pre request input checks 
   login() {
     this.localState.isLoggingIn = true;
     this.appState.set('username', this.localState.username);
@@ -55,7 +56,6 @@ export class LoginComponent {
       this.localState.isLoggingIn = false;
     }
   }
-
   signup(event) {
     event.preventDefault();
     this.router.parent.navigateByUrl('/signup');

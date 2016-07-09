@@ -6,6 +6,8 @@ import { contentHeaders } from '../common/headers';
 
 let template = require('../static/login.html');
 
+//TODO: Recheck and make this component useful. ( mostly sample code )
+
 @Component({
   selector: 'profile',
   directives: [ CORE_DIRECTIVES, FORM_DIRECTIVES ],

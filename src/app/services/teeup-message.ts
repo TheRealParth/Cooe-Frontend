@@ -1,3 +1,4 @@
+//TODO: Match with API
 export class Message {
   from: String;
   message: String;

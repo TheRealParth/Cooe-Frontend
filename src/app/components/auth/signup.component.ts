@@ -30,7 +30,7 @@ export class SignUpComponent {
     this.routeUtilService = routeUtilService;
   }
   signup() {
-    //TODO: Better error handling
+    //TODO: Test the field check and improve it more.
     if((this.localState.firstName.length > 3) && (this.localState.lastName.length > 3) && (this.localState.username.length > 3) && (this.localState.password.length > 7) && (this.localState.confirmPass.length > 7) && (this.localState.email.length > 3))
     {
       if(this.localState.password == this.localState.confirmPass){
@@ -65,6 +65,11 @@ export class SignUpComponent {
     } else {
       this.localState.error = "Invalid fields";
     }
+  }
+  //TODO: User this function to check if inputs are valid:
+  //If valid: enable submit button, else keep disabled and provide error message next to field
+  fieldCheck(){
+
   }
 
 }

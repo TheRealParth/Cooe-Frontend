@@ -14,7 +14,8 @@ let style = require('../static/css/override.css');
 	template: template,
   directives: [ ProgressCircle],
 })
-
+//TODO: in the template include the user-image component.
+//TODO: Implement api calls using teeups service to populate the teeups
 export class TeeupsComponent {
 	teeups: Teeup[] = [];
 	constructor(private routeUtilService: RouteUtilService, private teeupService: TeeupService){

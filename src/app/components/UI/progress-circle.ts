@@ -8,5 +8,6 @@ import {Component} from '@angular/core'
   directives: [MdProgressCircle],
 })
 export class ProgressCircle {
-
+  //This is just a loading progress circle
+  //TODO: Replace with Coo-e Loading animation
 }

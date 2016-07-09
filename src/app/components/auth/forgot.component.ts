@@ -23,6 +23,8 @@ export class ForgotComponent {
     this.router = router;
   }
   forgot(){
+    // checks for blank
+    //TODO: Add and test the pre request input checks
     if(this.localState.email != ''){
       this.localState.isRecovering = true;
       this.userService.forgot(this.localState.email)

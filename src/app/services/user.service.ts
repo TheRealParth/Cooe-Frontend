@@ -14,6 +14,8 @@ export class UserService {
     this.loggedIn = !!localStorage.getItem('auth_token');
     this.headers.append('Content-Type', 'application/json');
   }
+  //TODO: Implement JWT authentication as soon as API has it.
+  //most of these functions are self explanatory through the names
 
   login(username, password) {
    return this.http.post(LOGIN_URL, JSON.stringify({ "userName": username, "password": password }), { headers: this.headers })
@@ -39,11 +41,15 @@ export class UserService {
   }
 
   logout() {
+    //TODO: Implment JWT logout.
     localStorage.removeItem('auth_token');
     this.loggedIn = false;
   }
+  
+  //TODO getContacts
+  getContacts(){
 
-
+  }
   isLoggedIn() {
     return this.loggedIn;
   }

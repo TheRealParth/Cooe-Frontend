@@ -10,7 +10,7 @@ let template = require('../static/ui/navbar.html');
   directives: [RouterLink],
   providers: [UserService]
 })
-
+//TODO: Make profile image and profile name change to user's info on the right side
 export class NavbarComponent implements OnInit {
   localState = {
     isDropDownOpen: false,
@@ -34,11 +34,11 @@ export class NavbarComponent implements OnInit {
     this.localState.isContactFormOpen = !(this.localState.isContactFormOpen);
     console.dir(this.localState.isContactFormOpen);
   }
+  //TODO: Find out why this function is here...
   toggleLoginForm(){
     this.localState.isLoginFormOpen = !(this.localState.isLoginFormOpen);
   }
   ngOnInit(){
-    console.log(this.appState.get().isLoggedIn);
   }
 
 }

@@ -1,5 +1,5 @@
 import {Message} from "./teeup-message";
-
+//TODO: Match with API
 export class TeeupDetails {
     id: Number;
     name: String;

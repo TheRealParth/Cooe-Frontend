@@ -23,8 +23,8 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 
 export class MyStatus implements OnInit {
-  @Input() public default: any;
-  @Input() disabled: boolean = false;
+  @Input() public default: any;  //Default initialized value of status
+  @Input() disabled: boolean = false;  //Value responsible for enabling/disabling the dropdown
   localState = {
     isMyStatusOpen: false,
     disabled: false,
@@ -32,15 +32,20 @@ export class MyStatus implements OnInit {
   constructor(){
 
   }
+
+  //On mouseout, close the status dropdown
   mouseOutHandler(){
     if(this.localState.isMyStatusOpen)
       this.localState.isMyStatusOpen = false;
     console.log("hiiiii")
   }
+
+  //toggles the status dropdown
   toggleMyStatus(){
     console.log(this.localState.isMyStatusOpen)
     this.localState.isMyStatusOpen = !(this.localState.isMyStatusOpen);
   }
+
   ngOnInit(){
     this.localState.disabled = this.disabled;
   }

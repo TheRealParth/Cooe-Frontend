@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Router} from '@angular/router-deprecated';
-
+//This server basically shortens the whole route navation line.
+//Add all routing related function here though.
 @Injectable()
 export class RouteUtilService {
   constructor(private router: Router) {

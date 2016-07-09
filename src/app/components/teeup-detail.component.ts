@@ -12,6 +12,8 @@ let template = require('../static/teeupdetail.html');
     template: template,
     directives: [RouterLink, MyStatus, TeeupStatus],
 })
+//TODO: Make teeup load by ID of teeup provided.
+//TODO: Add a child components for People, Conversation, and Game Plan
 
 export class TeeupDetailComponent implements OnInit {
     id: number = -1;
@@ -33,7 +35,7 @@ export class TeeupDetailComponent implements OnInit {
         this.router.parent.navigate(['./Teeups'])
       }
     }
-  
+
     toggleMyStatus(){
       this.localState.isMyStatusOpen = !(this.localState.isMyStatusOpen);
       console.log(this.localState.isMyStatusOpen);
