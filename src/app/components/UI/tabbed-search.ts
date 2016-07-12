@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   template: `<div id="tabbed-search" style="background-color: white">
-              <div style="display: inline-block;">
+              <div style="display: inline-block; width: 100%;">
                 <ul *ngFor="let item of localState.selected">
-                  <li><div>{{item}}</div></li>
+                  <li><a (click)="removeItem(item)">X</a><div>{{item}}</div></li>
                 </ul>
                 <input type="text" (keyup)="handleKeypress($event)" placeholder="Search stuff" width="50px">
               </div>
@@ -28,6 +28,8 @@ export class TabbedSearch {
   constructor(){
   }
   removeItem(item: string){
+    this.localState.selected.splice(this.localState.selected.indexOf(item), 1)
+    this.localState.results.push(item);
   }
   handleClick(item: string){
     this.localState.results.splice(this.localState.results.indexOf(item), 1)
@@ -50,12 +52,10 @@ export class TabbedSearch {
   }
   getResults(input: string){
     this.localState.results = [];
-    console.log(this.localState.pool.length)
     for(var i = 0; i<this.localState.pool.length; i++){
       if(this.localState.pool[i].indexOf(input) > -1){
-
+        if(!(this.localState.selected.indexOf(input) > -1))
         this.localState.results.push(this.localState.pool[i]);
-        console.log(this.localState.results)
       }
     }
   }
