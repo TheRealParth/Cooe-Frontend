@@ -24,6 +24,7 @@ export class LoggedInRouterOutlet extends RouterOutlet {
       'teeups': true,
       'teeup' : true,
       'create-teeup' : true,
+      'test': true
     };
   }
 
