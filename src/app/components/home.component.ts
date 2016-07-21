@@ -24,7 +24,6 @@ export class HomeComponent {
 
     this.jwt = localStorage.getItem('jwt');
     this.decodedJwt = this.jwt && this.jwtHelper.decodeToken(this.jwt);
-    console.log(this.decodedJwt);
   }
 
   // logout() {

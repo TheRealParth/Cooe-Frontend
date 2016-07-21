@@ -18,7 +18,7 @@ let template = require('../../static/login.html');
 export class LoginComponent {
   localState = {username: '', password: '', error: '', isLoggingIn: false};
 
-  constructor(private appState: AppState, private routeUtilService: RouteUtilService, private userService: UserService, private router: Router) {
+  constructor(private appState: AppState, private routeUtilService: RouteUtilService, public userService: UserService, private router: Router) {
     this.userService = userService;
     this.router = router;
     this.routeUtilService = routeUtilService;
@@ -38,10 +38,12 @@ export class LoginComponent {
         data => {
           //TODO: if logged in successfully, SAVE JWT and REROUTE TO /TEEUPS
           localStorage.setItem('userName', username);
+          localStorage.setItem('password', password);
           // this.router.parent.navigateByUrl('/home');
           // return data;
+          console.log(this.userService.loggedIn);
           this.userService.setUser(username, password)
-          this.router.parent.navigateByInstruction(this.router.parent.generate(['./Home']));
+          this.router.navigateByUrl('/teeups');
           console.log("DATA", data);
         },
         error => {
@@ -56,6 +58,7 @@ export class LoginComponent {
       this.localState.error = "Missing fields";
       this.localState.isLoggingIn = false;
     }
+
   }
   signup(event) {
     event.preventDefault();

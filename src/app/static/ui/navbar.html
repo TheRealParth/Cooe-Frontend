@@ -21,10 +21,10 @@
   <div class="nav-wrapper container">
     <a id="logo-container" href="#" class="brand-logo"><img alt="Cooe Logo" id="logo" src="./assets/img/coo-e_logo.png"></a>
     <ul class="right hide-on-med-and-down">
-      <li [class.isHidden]="!logInCheck"><a [routerLink]="['./Teeups']">My Teeups</a></li>
-      <li [class.isHidden]="!logInCheck"><a href="#">Discovery</a></li>
-      <li [class.isHidden]="!logInCheck"><a class="dropdown-button" href="#" data-activates="profile-dropdown"><div  class='profile-pic'></div><i class="material-icons right">arrow_drop_down</i></a></li>
-      <li [class.isHidden]="logInCheck"><a [routerLink]="['./Login']" >Login</a></li>
+      <li [ngClass]="{isHidden : !userService.loggedIn}"><a [routerLink]="['./Teeups']">My Teeups</a></li>
+      <li [ngClass]="{isHidden : !userService.loggedIn}"><a href="#">Discovery</a></li>
+      <li [ngClass]="{isHidden : !userService.loggedIn}"><a class="dropdown-button" href="#" data-activates="profile-dropdown"><div  class='profile-pic'></div><i class="material-icons right">arrow_drop_down</i></a></li>
+      <li [ngClass]="{isHidden : userService.loggedIn}"><a [routerLink]="['./Login']" >Login</a></li>
     </ul>
 
     <ul id="nav-mobile"  class="side-nav">

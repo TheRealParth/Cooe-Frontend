@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import {RouteUtilService} from "./route-util.service";
+import {Router} from "@angular/router-deprecated";
 
 let TEMP_URL = '//people.such.works:8080';
 let LOGIN_URL = TEMP_URL + '/cooe/profile/validateCredential/';
@@ -11,8 +12,9 @@ export class UserService {
   public loggedIn = false;
   headers = new Headers();
 
-  constructor( private routeUtilService: RouteUtilService, private http: Http) {
+  constructor( private router: Router, private http: Http) {
     this.loggedIn = !!localStorage.getItem('userName');
+    console.log(this.loggedIn)
     if(localStorage.getItem('userName')) console.log('username: ', localStorage.getItem('userName'))
     this.headers.append('Content-Type', 'application/json');
   }
@@ -57,6 +59,7 @@ export class UserService {
     console.log('setting user ' + username)
     localStorage.setItem('userName', username);
     localStorage.setItem('password', password);
+    this.loggedIn=true;
   }
 
 }
