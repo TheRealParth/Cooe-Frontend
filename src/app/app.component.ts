@@ -20,6 +20,7 @@ import {AppState} from "./app.service";
 
 import { TabbedSearch } from "./components/ui/tabbed-search";
 import {Test} from "./components/test";
+import {UserService} from "./services/user.service";
 
 @Component({
   // HTML selector for this component
@@ -27,13 +28,13 @@ import {Test} from "./components/test";
   template: `
    
    <validation-modal *ngIf="appState.get().validating" ></validation-modal>
-   <navbar></navbar>
+   <navbar [logInCheck]="userService.loggedIn"></navbar>
 
       <router-awesome> 
       </router-awesome>
   `,
   directives: [LoggedInRouterOutlet, ValidationModal, NavbarComponent, ProgressCircle, ROUTER_DIRECTIVES, MD_INPUT_DIRECTIVES],
-  providers: [RouteUtilService, AppState],
+  providers: [UserService, RouteUtilService, AppState],
 })
 
 @RouteConfig([
@@ -45,13 +46,13 @@ import {Test} from "./components/test";
   { path: '/forgot', component: ForgotComponent, name: 'Forgot' },
   { path: '/teeups', component: TeeupsComponent, name: 'Teeups' },
   { path: '/teeup', component: TeeupDetailComponent, name: 'Teeup' },
-  { path: '/test', component: Test, name: 'Test' },
+  { path: '/test', component: TabbedSearch, name: 'Test' },
   { path: '/create-teeup', component: CreateTeeupComponent, name: 'CreateTeeup' }
 ])
 
 export class AppComponent {
   router: Router;
-  constructor( router: Router, private appState: AppState) {
+  constructor( public userService: UserService, router: Router, private appState: AppState) {
     this.router = router;
     this.appState = appState;
     this.appState.set('validating', false);

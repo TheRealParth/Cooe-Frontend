@@ -18,6 +18,7 @@ import { AuthConfig, AuthHttp, AUTH_PROVIDERS } from 'angular2-jwt';
 * our top level component that holds all of our components
 */
 import { AppComponent, APP_PROVIDERS } from 'app';
+import {UserService} from "./app/services/user.service";
 
 /*
  * Bootstrap our Angular app with a top level component `App` and inject
@@ -34,6 +35,7 @@ export function main(initialHmrState?: any): Promise<any> {
     DIRECTIVES,
     PIPES,
     AUTH_PROVIDERS,
+    UserService,
     APP_PROVIDERS,
     provide(Window, { useValue: window }),
     provide(AuthHttp, {

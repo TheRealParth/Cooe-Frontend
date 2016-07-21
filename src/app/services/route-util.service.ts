@@ -9,6 +9,8 @@ export class RouteUtilService {
   }
   routeTo(route: string){
     var newRoute = ['./' + route];
+    console.log("routing to " + newRoute)
+    console.log("AKA " + this.router.parent.generate(newRoute))
     this.router.parent.navigateByInstruction(this.router.parent.generate(newRoute));
   }
 }

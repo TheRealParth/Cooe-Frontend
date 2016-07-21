@@ -1,11 +1,11 @@
-
+<div >
 <ul id="profile-dropdown" class="dropdown-content z-depth-2">
   <li><a href="#!">Profile</a></li>
   <li><a href="#!">Contacts</a></li>
   <li><a href="#!">Settings</a></li>
   <li><a href="#!">Feedback</a></li>
   <li class="divider"></li>
-  <li><a href="#!">Logout</a></li>
+  <li><a (click)="logout()">Logout</a></li>
 </ul>
 <ul id="sidebar-dropdown" class="dropdown-content z-depth-2">
   <li><a href="#!">Profile</a></li>
@@ -13,53 +13,64 @@
   <li><a href="#!">Settings</a></li>
   <li><a href="#!">Feedback</a></li>
   <li class="divider"></li>
-  <li><a href="#!">Logout</a></li>
+  <li><a (click)="logout()">Logout</a></li>
 </ul>
-<nav  *ngIf="appState.get().isLoggedIn" role="navigation">
+
+
+<nav   role="navigation"  >
   <div class="nav-wrapper container">
-    <a id="logo-container" href="#" class="brand-logo"><img alt="Cooe Logo" id="logo" src="./img/coo-e_logo.png"></a>
+    <a id="logo-container" href="#" class="brand-logo"><img alt="Cooe Logo" id="logo" src="./assets/img/coo-e_logo.png"></a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="#">My Teeups</a></li>
-      <li><a href="#">Discovery</a></li>
-      <li><a class="dropdown-button" href="#!" data-activates="profile-dropdown"><div  class='profile-pic'></div><i class="material-icons right">arrow_drop_down</i></a></li>
+      <li [class.isHidden]="!logInCheck"><a [routerLink]="['./Teeups']">My Teeups</a></li>
+      <li [class.isHidden]="!logInCheck"><a href="#">Discovery</a></li>
+      <li [class.isHidden]="!logInCheck"><a class="dropdown-button" href="#" data-activates="profile-dropdown"><div  class='profile-pic'></div><i class="material-icons right">arrow_drop_down</i></a></li>
+      <li [class.isHidden]="logInCheck"><a [routerLink]="['./Login']" >Login</a></li>
     </ul>
-    <ul id="nav-mobile" class="side-nav">
-      <li><a class="dropdown-button" href="#!" data-activates="sidebar-dropdown">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-      <li><a href="#">My Teeups</a></li>
-      <li><a href="#">Discovery</a></li>
+
+    <ul id="nav-mobile"  class="side-nav">
+      <li [class.isHidden]="!userService.loggedIn"><a class="dropdown-button" href="#" data-activates="sidebar-dropdown">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li [class.isHidden]="!userService.loggedIn"><a href="#">My Teeups</a></li>
+      <li [class.isHidden]="!userService.loggedIn"><a >Discovery</a></li>
+      <li [class.isHidden]="userService.loggedIn"><a [routerLink]="['./Login']" >Login</a></li>
     </ul>
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i>
     </a>
   </div>
 </nav>
-
-<div *ngIf="!appState.get().isLoggedIn" id='top-row' class="row">
-  <div class="control-bar">
-    <div (click)="toggleDropDown()"  id="open-close-btn" [class.bats-opened]="localState.isDropDownOpen" [class.bats-closed]="!localState.isDropDownOpen"class="control-btn"></div>
-    <div class="control-menu"  *ngIf="localState.isDropDownOpen">
-      <a [routerLink]="['./Home']" class="control-btn home-btn bats-logo" (mouseenter)="setNavTitle('Home')" data-txt="Home"></a>
-      <a  class="control-btn about-btn bats-tour" (mouseenter)="setNavTitle('About')" data-txt="About"></a>
-      <a (click)="toggleContactForm()" (mouseenter)="setNavTitle('Contact')" class="control-btn contact-btn bats-invited" data-txt="Contact" ></a>
-      <div class="control-text hide-for-small">{{localState.navTitle}}</div>
-    </div>
-  </div>
-  <div *ngIf="localState.isContactFormOpen" id="contact-form" style="display:block;" class="dropdown-box">
-    <strong>Let us know what's on your mind:</strong>
-    <input type="text" placeholder="Your name">
-    <input type="text" placeholder="Your email">
-    <textarea placeholder="Your thoughts"></textarea>
-    <input type="submit" class="btn-submit" value="Submit">
-  </div>
-  <div *ngIf="localState.isLoginFormOpen" id="login-form" class="dropdown-box">
-    <strong>Username:</strong>
-    <input type="text">
-    <strong>Password:</strong>
-    <input type="text">
-    <input type="submit" class="btn-submit" value="Submit">
-  </div>
-
-
-  <div class="signin-bar">
-    <a [routerLink]="['./Login']" class="signin-button">Beta Sign-In</a>
-  </div>
 </div>
+
+<!--<div *ngIf="appState.get().isLoggedIn">-->
+  <!--<ul id="profile-dropdown" class="dropdown-content z-depth-2">-->
+    <!--<li><a href="#!">Profile</a></li>-->
+    <!--<li><a href="#!">Contacts</a></li>-->
+    <!--<li><a href="#!">Settings</a></li>-->
+    <!--<li><a href="#!">Feedback</a></li>-->
+    <!--<li class="divider"></li>-->
+    <!--<li><a href="#!">Logout</a></li>-->
+  <!--</ul>-->
+  <!--<ul id="sidebar-dropdown" class="dropdown-content z-depth-2">-->
+    <!--<li><a href="#!">Profile</a></li>-->
+    <!--<li><a href="#!">Contacts</a></li>-->
+    <!--<li><a href="#!">Settings</a></li>-->
+    <!--<li><a href="#!">Feedback</a></li>-->
+    <!--<li class="divider"></li>-->
+    <!--<li><a href="#!">Logout</a></li>-->
+  <!--</ul>-->
+
+
+  <!--<nav   role="navigation"   >-->
+    <!--<div class="nav-wrapper container">-->
+      <!--<a id="logo-container" href="#" class="brand-logo"><img alt="Cooe Logo" id="logo" src="./assets/img/coo-e_logo.png"></a>-->
+      <!--<ul class="right hide-on-med-and-down" >-->
+        <!--<li><a [routerLink]="['./Login']" >Login</a></li>-->
+      <!--</ul>-->
+      <!--<ul id="nav-mobile"  class="side-nav">-->
+        <!--<li><a [routerLink]="['./Login']" >Login</a></li>-->
+      <!--</ul>-->
+      <!--<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i>-->
+      <!--</a>-->
+    <!--</div>-->
+  <!--</nav>-->
+<!--</div>-->
+
+<!--<a [routerLink]="['./Login']" class="signin-button">Beta Sign-In</a>-->

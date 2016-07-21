@@ -25,9 +25,14 @@ export class TeeupsComponent {
 	}
 	ngOnInit() {
     this.getTeeups();
-    console.log(this.elementRef.nativeElement);
-    jQuery(this.elementRef.nativeElement).tabs();
+    //noinspection TypeScriptUnresolvedFunction
+    $(document).ready(function(){
+      //noinspection TypeScriptUnresolvedFunction
+      $('ul.tabs').tabs();
+    });
 
-	}
+
+
+  }
 
 }

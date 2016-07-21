@@ -1,17 +1,19 @@
 // user.service.ts
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
+import {RouteUtilService} from "./route-util.service";
 
 let TEMP_URL = '//people.such.works:8080';
 let LOGIN_URL = TEMP_URL + '/cooe/profile/validateCredential/';
 
 @Injectable()
 export class UserService {
-  private loggedIn = false;
+  public loggedIn = false;
   headers = new Headers();
 
-  constructor( private http: Http) {
-    this.loggedIn = !!localStorage.getItem('auth_token');
+  constructor( private routeUtilService: RouteUtilService, private http: Http) {
+    this.loggedIn = !!localStorage.getItem('userName');
+    if(localStorage.getItem('userName')) console.log('username: ', localStorage.getItem('userName'))
     this.headers.append('Content-Type', 'application/json');
   }
   //TODO: Implement JWT authentication as soon as API has it.
@@ -42,15 +44,19 @@ export class UserService {
 
   logout() {
     //TODO: Implment JWT logout.
-    localStorage.removeItem('auth_token');
+    localStorage.removeItem('userName');
+    localStorage.removeItem('password');
     this.loggedIn = false;
   }
-  
+
   //TODO getContacts
   getContacts(){
 
   }
-  isLoggedIn() {
-    return this.loggedIn;
+  setUser(username: string, password: string){
+    console.log('setting user ' + username)
+    localStorage.setItem('userName', username);
+    localStorage.setItem('password', password);
   }
+
 }

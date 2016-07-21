@@ -3,9 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   template: `<div id="tabbed-search" style="background-color: white">
               <div style="display: inline-block; width: 100%;">
-                <ul *ngFor="let item of localState.selected">
-                  <li><a (click)="removeItem(item)">X</a><div>{{item}}</div></li>
-                </ul>
+              <div class="chip" *ngFor="let item of localState.selected">
+                {{item}}
+                <i (click)="removeItem(item)" class="material-icons">close</i>
+              </div>
                 <input type="text" (keyup)="handleKeypress($event)" placeholder="Search stuff" width="50px">
               </div>
               

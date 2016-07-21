@@ -16,7 +16,12 @@ nav ul a,
 nav {
   background-color: $navBgColor;
 }
-
+.isHidden {
+  display: none;
+}
+.side-nav {
+  background-color: $navBgColor;
+}
 p {
   line-height: 2rem;
 }
@@ -130,6 +135,9 @@ margin-top: -50px;
         margin-right: 20px;
         margin-top: 0px;
     }
+    .card-title {
+      font-size: 20px;
+    }
     .teeup-info{
       line-height:1.8;
       svg{
@@ -137,5 +145,33 @@ margin-top: -50px;
       }
     }
     padding: 5px;
+  }
+}
+@media only screen and (min-width : 1129px) and (max-width : 1700px) { //1129
+  #my-teeups{
+    .card .container {
+      margin: 0;
+      margin-left: 120px;
+    }
+    .card-content .teeup-list-image {
+      margin-bottom: -50px;
+    }
+  }
+}
+@media only screen and (max-width : 1128px) {
+  #my-teeups{
+    .card .card-content .btn {
+      margin: 0px;
+      margin-right: 3px;
+      margin-left: 3px;
+      width: 85px;
+    }
+    .card .container {
+      margin: 0;
+      margin-left: 120px;
+    }
+    .card-content .teeup-list-image {
+      margin-bottom: -50px;
+    }
   }
 }

@@ -21,9 +21,9 @@ export class LoggedInRouterOutlet extends RouterOutlet {
       'forgot' : true,
       'home'   : true,
       //to be removed from publics
-      'teeups' : true,
-      'teeup'  : true,
-      'create-teeup' : true,
+      'teeups' : false,
+      'teeup'  : false,
+      'create-teeup' : false,
       'test'   : true
     };
   }
@@ -31,7 +31,7 @@ export class LoggedInRouterOutlet extends RouterOutlet {
   activate(instruction: ComponentInstruction) {
     let url = instruction.urlPath;
     console.log(url);
-    if (!this.publicRoutes[url] && !localStorage.getItem('jwt')) {
+    if (!this.publicRoutes[url] && !localStorage.getItem('userName')) {
       // todo: redirect to Login, may be there a better way?
       this.parentRouter.navigateByUrl('/login');
     }

@@ -12,7 +12,7 @@ let template = require('../../static/login.html');
 @Component({
   selector: 'login',
   directives: [RouterLink, CORE_DIRECTIVES, FORM_DIRECTIVES, MD_INPUT_DIRECTIVES ],
-  providers: [UserService, RouteUtilService, SignUpComponent],
+  providers: [RouteUtilService, SignUpComponent],
   template: template,
 })
 export class LoginComponent {
@@ -24,8 +24,9 @@ export class LoginComponent {
     this.routeUtilService = routeUtilService;
     this.localState.isLoggingIn = false;
     this.appState = appState;
+
   }
-  //TODO: Test the pre request input checks 
+  //TODO: Test the pre request input checks
   login() {
     this.localState.isLoggingIn = true;
     this.appState.set('username', this.localState.username);
@@ -36,11 +37,11 @@ export class LoginComponent {
         .subscribe(
         data => {
           //TODO: if logged in successfully, SAVE JWT and REROUTE TO /TEEUPS
-          // localStorage.setItem('jwt', data.json().id_token);
+          localStorage.setItem('userName', username);
           // this.router.parent.navigateByUrl('/home');
           // return data;
-          this.appState.set('isLoggedIn', true);
-          this.routeUtilService.routeTo('Teeups');
+          this.userService.setUser(username, password)
+          this.router.parent.navigateByInstruction(this.router.parent.generate(['./Home']));
           console.log("DATA", data);
         },
         error => {
@@ -60,5 +61,7 @@ export class LoginComponent {
     event.preventDefault();
     this.router.parent.navigateByUrl('/signup');
   }
-
+  ngOnInit(){
+    if(this.userService.loggedIn) this.routeUtilService.routeTo('Teeups')
+  }
 }
