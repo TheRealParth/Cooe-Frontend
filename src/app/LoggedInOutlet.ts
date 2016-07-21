@@ -16,15 +16,15 @@ export class LoggedInRouterOutlet extends RouterOutlet {
     // The Boolean following each route below
     // denotes whether the route requires authentication to view
     this.publicRoutes = {
-      'login': true,
-      'signup': true,
+      'login'  : true,
+      'signup' : true,
       'forgot' : true,
-      'home' : true,
+      'home'   : true,
       //to be removed from publics
-      'teeups': true,
-      'teeup' : true,
+      'teeups' : true,
+      'teeup'  : true,
       'create-teeup' : true,
-      'test': true
+      'test'   : true
     };
   }
 

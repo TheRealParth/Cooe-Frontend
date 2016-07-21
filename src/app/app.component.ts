@@ -19,6 +19,7 @@ import {RouteUtilService} from "./services/route-util.service";
 import {AppState} from "./app.service";
 
 import { TabbedSearch } from "./components/ui/tabbed-search";
+import {Test} from "./components/test";
 
 @Component({
   // HTML selector for this component
@@ -44,7 +45,7 @@ import { TabbedSearch } from "./components/ui/tabbed-search";
   { path: '/forgot', component: ForgotComponent, name: 'Forgot' },
   { path: '/teeups', component: TeeupsComponent, name: 'Teeups' },
   { path: '/teeup', component: TeeupDetailComponent, name: 'Teeup' },
-  { path: '/test', component: TabbedSearch, name: 'Test' },
+  { path: '/test', component: Test, name: 'Test' },
   { path: '/create-teeup', component: CreateTeeupComponent, name: 'CreateTeeup' }
 ])
 

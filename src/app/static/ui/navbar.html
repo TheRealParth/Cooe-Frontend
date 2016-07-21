@@ -1,82 +1,38 @@
-<nav *ngIf="appState.get().isLoggedIn" id="topbar">
 
-  <ul class="left title-area">
-
-    <li class="has-dropdown"><a (click)="toggleDropDown()" class="dd-btn"><img src="/assets/img/logo.png"></a>
-      <ul (click)="toggleDropDown()" *ngIf="localState.isDropDownOpen" class="dropdown cooelink open">
-        <li>
-          <a href="../#/teeups/">
-            <div class="bats-logo"></div>
-            <span>My TeeUps</span>
-          </a>
-        </li>
-        <li>
-          <a href="/#/createteeup/">
-            <div class="bats-add"></div>
-            <span>Create TeeUps</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-user"></div>
-            <span>My Profile</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-contacts"></div>
-            <span>Contacts</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-calendar"></div>
-            <span>Calendar</span>
-          </a>
-        </li>
-        <li>
-          <a href="/settings/">
-            <div class="bats-settings"></div>
-            <span>Settings</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-send-msg"></div>
-            <span>Send Feedback</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="bats-tour"></div>
-            <span>Tour</span>
-          </a>
-        </li>
-      </ul>
-    </li>
-
-  </ul>
-
-  <ul class="left">
-
-  </ul>
-
-  <ul class="right">
-    <li class="has-dropdown">
-      <a  >
-        <img class="rounded" src="/assets/img/avatar.png" title="dougzytko@gmail.com" style="width:30px; height: 30px;">
-        <span class="usernametxt"><!--<span id="myjidhere"></span>--> doug</span>
-      </a>
-      <ul (click)="toggleDropDown()"*ngIf="localState.isDropDownOpen"  class="dropdown cooelink">
-        <li><a href="/invite/email/">Invite Friends</a></li>
-        <li><a href="/settings/">Settings</a></li>
-        <li class="dividerx"></li>
-        <li><a href="/logout/">Logout</a></li>
-      </ul>
-    </li>
-  </ul>
-
+<ul id="profile-dropdown" class="dropdown-content z-depth-2">
+  <li><a href="#!">Profile</a></li>
+  <li><a href="#!">Contacts</a></li>
+  <li><a href="#!">Settings</a></li>
+  <li><a href="#!">Feedback</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">Logout</a></li>
+</ul>
+<ul id="sidebar-dropdown" class="dropdown-content z-depth-2">
+  <li><a href="#!">Profile</a></li>
+  <li><a href="#!">Contacts</a></li>
+  <li><a href="#!">Settings</a></li>
+  <li><a href="#!">Feedback</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">Logout</a></li>
+</ul>
+<nav  *ngIf="appState.get().isLoggedIn" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo"><img alt="Cooe Logo" id="logo" src="./img/coo-e_logo.png"></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#">My Teeups</a></li>
+      <li><a href="#">Discovery</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="profile-dropdown"><div  class='profile-pic'></div><i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+    <ul id="nav-mobile" class="side-nav">
+      <li><a class="dropdown-button" href="#!" data-activates="sidebar-dropdown">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a href="#">My Teeups</a></li>
+      <li><a href="#">Discovery</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i>
+    </a>
+  </div>
 </nav>
+
 <div *ngIf="!appState.get().isLoggedIn" id='top-row' class="row">
   <div class="control-bar">
     <div (click)="toggleDropDown()"  id="open-close-btn" [class.bats-opened]="localState.isDropDownOpen" [class.bats-closed]="!localState.isDropDownOpen"class="control-btn"></div>

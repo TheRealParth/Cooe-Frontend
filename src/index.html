@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
 
   <title>coo-e</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <meta name="viewport" content="width=380, maximum-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 
-  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- use http://www.favicon-generator.org/ to replace files in public/icon-->
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/icon/apple-icon-57x57.png">
@@ -27,9 +26,9 @@
   <link rel="icon" type="image/png" sizes="96x96" href="http://coo-e.com/static/img/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="http://coo-e.com/static/img/favicon.png">
   <link rel="manifest" href="/assets/manifest.json">
-  <link rel="stylesheet" href="/assets/css/normalize.css"/>
-  <link rel="stylesheet" href="/assets/css/main.css"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 
   <!--<script src="/assets/js/modernizr.js"></script>-->
@@ -77,16 +76,6 @@
     </div>
 </div>
 </app>
-  <!-- Google Analytics: change UA-71073175-1 to be your site's ID -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-71073175-1', 'auto');
-    ga('send', 'pageview');
-  </script>
 
   <% if (webpackConfig.metadata.ENV === 'development') { %>
   <!-- Webpack Dev Server reload -->
@@ -97,29 +86,8 @@
 
 </body>
 <script src="https://cdn.auth0.com/js/lock-9.1.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-<!-- <script>window.jQuery || document.write('<script src="/media/js/libs/jquery-1.7.2.min.js"><\/script>')</script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/plugins/CSSPlugin.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/easing/EasePack.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenLite.min.js"></script>
-<script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/assets/js/materialize.js"></script>
+<script src="/assets/js/init.js"></script>
 
-  window.onload = function() {
-    var logoSvg = $("#logo-svg");
-    var logo = $(".logo");
-    CSSPlugin.defaultSmoothOrigin = true;
-    doTween2();
-    function doTween1() {
-      TweenLite.to(logoSvg, .4, {height: "115px", width: "115px", opacity: 1, ease: Linear.ease,  transformOrigin: "50% 50%", onComplete:doTween2});
-    }
-    function doTween2() {
-      TweenLite.to(logoSvg, .4, {height: "100px", width: "100px", opacity: .2, ease: Linear.ease,   transformOrigin: "50% 50%", onComplete:doTween1});
-    }
-  }
-</script>
-
-
-
-<!-- Setting the right viewport -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </html>

@@ -7,7 +7,7 @@ import { provide } from '@angular/core';
 * Platform and Environment
 * our providers/directives/pipes
 */
-import { DIRECTIVES, PIPES, PROVIDERS } from './platform/browser';
+import { DIRECTIVES, PIPES, PROVIDERS} from './platform/browser';
 import { ENV_PROVIDERS } from './platform/environment';
 import { FORM_PROVIDERS, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { ROUTER_PROVIDERS } from '@angular/router-deprecated';

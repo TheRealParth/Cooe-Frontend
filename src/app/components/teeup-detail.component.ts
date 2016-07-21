@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ElementRef} from '@angular/core';
 import {RouterLink, Router, RouteParams} from '@angular/router-deprecated';
 import {TeeupService} from '../services/teeup.service.ts';
 import {TeeupDetails} from '../services/teeup-details.ts';

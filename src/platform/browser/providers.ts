@@ -22,6 +22,7 @@ export const APPLICATION_PROVIDERS = [
   ...HTTP_PROVIDERS,
   ...MATERIAL_PROVIDERS,
   ...ROUTER_PROVIDERS,
+
 ];
 
 export const PROVIDERS = [

@@ -1,64 +1,144 @@
-<div class="table_holder">
-  <div class="main_table">
-    <div class="main_row">
+<div id="my-teeups" class="container">
+  <div class="row">
+    <ul class="tabs">
+      <li class="tab col s3"><a href="#test1">Invited</a></li>
+      <li class="tab col s3"><a class="active" href="#test2">Coordinating</a></li>
+      <li class="tab col s3"><a href="#test4">Recent</a></li>
+    </ul>
+  </div>
+  <div class="section">
 
-      <div id="view_fake" class="block_holder" >
-        <div class="block">
-        </div>
-      </div>
-
-
-      <div id="view_inbox" class="block_holder panel1">
-        <div class="block">
-          <div class="header">
-            <span class="headerTitle">
-                My TeeUps:
-            </span>
-            <a id="create_button"  class="header_button right" (click)="routeUtilService.routeTo('CreateTeeup')" title="Create Teeup"><i class="bats-add"></i></a>
-          </div>
-
-          <div class="block_content">
-            <div class="sub_head">
-              <div>Currently Coordinating</div> <div class="amount">{{teeups.length}}</div>
+    <!--   Icon Section   -->
+    <div class="row" >
+      <div class="col s12 m12 l6" *ngFor="let teeup of teeups">
+        <div class="card">
+          <a style="color: #000000;" [routerLink]="['/Teeup', {id: teeup.id}]">
+          <div class="card-content">
+            <div class="teeup-list-image">
             </div>
+            <span class="card-title">{{teeup.name}}</span>
 
-            <div id="inbox_sections_container">
-            <progress-circle *ngIf="!(teeups.length)"></progress-circle>
-              <div *ngFor="let teeup of teeups" class="inbox_section" teeupid="25">
-                <a [routerLink]="['/Teeup', {id: teeup.id}]">
-                  <div class="top clearfix">
-                    <div class="avatar left">
-                      <img style="height: 65px;" src="/getavatar/dougzytko@gmail.com/" title="doug">
-                    </div>
-                    <div class="info">
-                      <div class="title"><span class="bats-planning status-planning"></span>{{teeup.name}}</div>
-                      <div class="my_status"><span class="bats-going status-going"></span>{{teeup.decision}}</div>
-                      <div class="sub_thing" style="display:none;">
-                        <div class="bats-going"> {{teeup.going}}</div>
-                        <div class="bats-invited"> 2</div>
-                        <div class="bats-updated"> 1d</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="fields clearfix">
-                    <div class="field">
-                      <img src="/assets/img/when_undecided.png">
-                      <span>{{teeup.time}}</span>
-                    </div>
-                    <div class="field">
-                      <img src="/assets/img/where_undecided.png">
-                      <span>{{teeup.location}}</span>
-                    </div>
-                  </div>
-                </a>
+            <p><a class="waves-effect waves-light btn">It's on</a><a class="waves-effect waves-light btn">I'm Going</a></p>
+            <div class="row">
+              <div class="col s6 m4 teeup-info">
+                <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                </svg>
+                {{teeup.going}} going
+              </div>
+              <div class="col s6 m4 teeup-info">
+                <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+                </svg>
+                17 invited
+              </div>
+              <div class="col s6 m4 teeup-info">
+                <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                </svg>
+                {{teeup.time}}
+              </div>
+              <div class="col s6 m4 teeup-info">
+                <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0V0z" fill="none"/>
+                  <path d="M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"/>
+                </svg>
+                {{teeup.location}}
               </div>
             </div>
           </div>
+            </a>
         </div>
       </div>
 
 
-
-    </div> <!-- /main row -->
+    </div>
+    <a (click)="routeUtilService.routeTo('CreateTeeup')" id="create-teeup-button" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
   </div>
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="table_holder">-->
+  <!--<div class="main_table">-->
+    <!--<div class="main_row">-->
+
+      <!--<div id="view_fake" class="block_holder" >-->
+        <!--<div class="block">-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+      <!--<div id="view_inbox" class="block_holder panel1">-->
+        <!--<div class="block">-->
+          <!--<div class="header">-->
+            <!--<span class="headerTitle">-->
+                <!--My TeeUps:-->
+            <!--</span>-->
+            <!--<a id="create_button"  class="header_button right" (click)="routeUtilService.routeTo('CreateTeeup')" title="Create Teeup"><i class="bats-add"></i></a>-->
+          <!--</div>-->
+
+          <!--<div class="block_content">-->
+            <!--<div class="sub_head">-->
+              <!--<div>Currently Coordinating</div> <div class="amount">{{teeups.length}}</div>-->
+            <!--</div>-->
+
+            <!--<div id="inbox_sections_container">-->
+            <!--<progress-circle *ngIf="!(teeups.length)"></progress-circle>-->
+              <!--<div *ngFor="let teeup of teeups" class="inbox_section" teeupid="25">-->
+                <!--<a [routerLink]="['/Teeup', {id: teeup.id}]">-->
+                  <!--<div class="top clearfix">-->
+                    <!--<div class="avatar left">-->
+                      <!--<img style="height: 65px;" src="/getavatar/dougzytko@gmail.com/" title="doug">-->
+                    <!--</div>-->
+                    <!--<div class="info">-->
+                      <!--<div class="title"><span class="bats-planning status-planning"></span>{{teeup.name}}</div>-->
+                      <!--<div class="my_status"><span class="bats-going status-going"></span>{{teeup.decision}}</div>-->
+                      <!--<div class="sub_thing" style="display:none;">-->
+                        <!--<div class="bats-going"> {{teeup.going}}</div>-->
+                        <!--<div class="bats-invited"> 2</div>-->
+                        <!--<div class="bats-updated"> 1d</div>-->
+                      <!--</div>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--<div class="fields clearfix">-->
+                    <!--<div class="field">-->
+                      <!--<img src="/assets/img/when_undecided.png">-->
+                      <!--<span>{{teeup.time}}</span>-->
+                    <!--</div>-->
+                    <!--<div class="field">-->
+                      <!--<img src="/assets/img/where_undecided.png">-->
+                      <!--<span>{{teeup.location}}</span>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</a>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+
+    <!--</div> &lt;!&ndash; /main row &ndash;&gt;-->
+  <!--</div>-->
+<!--</div>-->
